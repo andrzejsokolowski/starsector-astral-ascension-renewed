@@ -3,9 +3,9 @@
 	"modName":"Astral Ascension Renewed",
 	"modThreadId":36167,
 	"modVersion": {
-		"major":0,
-		"minor":2,
-		"patch":1
+		"major":1,
+		"minor":0,
+		"patch":0
 	},
 	"starsectorVersion":"0.98a-RC8",
 	"directDownloadURL":"https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/releases/latest/download/AstralAscensionRenewed.zip"

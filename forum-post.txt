@@ -2,6 +2,7 @@
 [size=28pt][url=https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/releases/latest][b]Astral Ascension Renewed[/b][/url][/size]
 [url=https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/releases/latest][img]https://img.shields.io/github/downloads/andrzejsokolowski/starsector-astral-ascension-renewed/total?style=for-the-badge&label=download[/img][/url]  [url=https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed][img]https://img.shields.io/github/v/release/andrzejsokolowski/starsector-astral-ascension-renewed?display_name=tag&sort=semver&style=for-the-badge&label=source[/img][/url]
 [/center]
+[center][img]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/docs/screenshot-hyper-ecumenopolis.png?raw=true[/img][/center]
 [center][b]
 WHAT DOES THIS MOD DO?
 - An Omega core can govern your colony, with three administrator skills of its own.
@@ -83,5 +84,8 @@ They are left alone, unless you give one an Omega core administrator.
 [b]Astral Ascension[/b] by [b]Planetace[/b]: the idea of the Omega core administrator and its three skills, colonies past size 10, and ecumenopolis worlds. This mod is written from scratch with their permission and uses none of the original's code or art.
 [/spoiler]
 [spoiler=Version log]
+1.0.0 - first stable release. No gameplay changes since 0.2.1.
+0.2.1 - the size 15 stage is called Hyper-Ecumenopolis.
+0.2.0 - new size 15 stage with an orbital ring around the planet; Ecumenopolis is now sizes 13-14; colonies past size 10 lose stability; rewritten size descriptions.
 0.1.0 - first release.
 [/spoiler]

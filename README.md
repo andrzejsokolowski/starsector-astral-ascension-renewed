@@ -2,6 +2,8 @@
 
 [Forum topic](https://fractalsoftworks.com/forum/index.php?topic=36167.0)
 
+![A size 15 Hyper-Ecumenopolis with its orbital ring](docs/screenshot-hyper-ecumenopolis.png)
+
 A continuation of Planetace's Astral Ascension, made with the original author's blessing. An Omega core can govern a
 colony, and only an Omega core can take a colony past size 10.
 

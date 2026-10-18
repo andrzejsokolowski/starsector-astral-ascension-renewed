@@ -25,7 +25,7 @@ small quota that runs out. The workspace `AGENTS.md` has the full routine.
 
 ## Releases
 
-0.1.0 is the first published GitHub Release (2026-10-18). Follow the release workflow below for
+0.1.0 is the first published GitHub Release (2026-10-18); 1.0.0 is the first stable one (2026-10-18). Follow the release workflow below for
 every requested change.
 
 ## Origin
