@@ -32,9 +32,10 @@ public final class Ascension {
 
     public static final String ARCOLOGY_CONDITION = "aar_arcology_world";
     public static final String ECUMENOPOLIS_CONDITION = "aar_ecumenopolis";
-    public static final String CROWNED_CONDITION = "aar_crowned_world";
+    /** Hyper-Ecumenopolis. The id is from 0.2.0, when the stage was called Crowned World; saves keep it. */
+    public static final String HYPER_ECUMENOPOLIS_CONDITION = "aar_crowned_world";
     public static final int ECUMENOPOLIS_SIZE = 13;
-    public static final int CROWNED_SIZE = 15;
+    public static final int HYPER_ECUMENOPOLIS_SIZE = 15;
     public static final String ARCOLOGY_PLANET = "aar_arcology";
     public static final String ECUMENOPOLIS_PLANET = "aar_ecumenopolis";
 
@@ -91,11 +92,11 @@ public final class Ascension {
     /** The stage condition and the planet's look follow the size. Cheap to call every frame. */
     public static void updateStage(MarketAPI market) {
         int size = market.getSize();
-        String want = size >= CROWNED_SIZE ? CROWNED_CONDITION
+        String want = size >= HYPER_ECUMENOPOLIS_SIZE ? HYPER_ECUMENOPOLIS_CONDITION
                 : size >= ECUMENOPOLIS_SIZE ? ECUMENOPOLIS_CONDITION
                 : size > VANILLA_MAX ? ARCOLOGY_CONDITION : null;
         boolean changed = false;
-        for (String stage : new String[] {ARCOLOGY_CONDITION, ECUMENOPOLIS_CONDITION, CROWNED_CONDITION}) {
+        for (String stage : new String[] {ARCOLOGY_CONDITION, ECUMENOPOLIS_CONDITION, HYPER_ECUMENOPOLIS_CONDITION}) {
             if (!stage.equals(want) && market.hasCondition(stage)) {
                 market.removeCondition(stage);
                 changed = true;
@@ -110,10 +111,10 @@ public final class Ascension {
             market.reapplyIndustries();
         }
 
-        // A Crowned World is an ecumenopolis with an orbital ring around it.
+        // A Hyper-Ecumenopolis is an ecumenopolis with an orbital ring around it.
         String look = ARCOLOGY_CONDITION.equals(want) ? ARCOLOGY_PLANET : want != null ? ECUMENOPOLIS_PLANET : null;
         MemoryAPI memory = market.getMemoryWithoutUpdate();
-        if (CROWNED_CONDITION.equals(want)) {
+        if (HYPER_ECUMENOPOLIS_CONDITION.equals(want)) {
             ensureRing(market);
         } else {
             memory.unset(RING);
@@ -146,7 +147,7 @@ public final class Ascension {
         planet.applySpecChanges();
     }
 
-    /** The ring takes itself away once the colony is no longer a Crowned World; see {@link OrbitalRing}. */
+    /** The ring takes itself away once the colony is no longer a Hyper-Ecumenopolis; see {@link OrbitalRing}. */
     private static void ensureRing(MarketAPI market) {
         PlanetAPI planet = market.getPlanetEntity();
         if (planet == null || planet.isStar() || planet.getContainingLocation() == null) return;

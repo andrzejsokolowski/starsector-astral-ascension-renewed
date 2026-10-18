@@ -5,7 +5,7 @@
 	],
 	"graphics":{
 		"aar":{
-			# The orbital ring of a Crowned World, drawn by astralascensionrenewed.campaign.OrbitalRing.
+			# The orbital ring of a Hyper-Ecumenopolis, drawn by astralascensionrenewed.campaign.OrbitalRing.
 			"orbital_ring":"graphics/planets/aar_orbital_ring.png",
 			"orbital_ring_lights":"graphics/planets/aar_orbital_ring_lights.png",
 		},

@@ -415,7 +415,7 @@ def ring_layer(structure, lights, size, planet_r, far, tilt_deg=15.0, pitch_deg=
     return Image.fromarray((rgba * 255).astype(np.uint8), "RGBA")
 
 
-def crowned_render(surface, lights, ring, size, bg=(0, 0, 0, 0), rot=0.6):
+def hyper_render(surface, lights, ring, size, bg=(0, 0, 0, 0), rot=0.6):
     """A planet inside its orbital ring: far half, then the planet, then the near half."""
     planet_px = int(size / 2 / (RING_MIDDLE + RING_HALF + 0.04))
     sph = render_sphere(surface, lights, planet_px * 2, rot=rot)
@@ -557,8 +557,8 @@ def main():
     ring = make_orbital_ring()
     ring[0].save(os.path.join(out_planets, "aar_orbital_ring.png"), optimize=True)
     ring[1].save(os.path.join(out_planets, "aar_orbital_ring_lights.png"), optimize=True)
-    crowned_render(*made["aar_ecumenopolis"], ring, 160, bg=(12, 14, 24, 255)).resize(
-        (40, 40), Image.LANCZOS).save(os.path.join(out_markets, "aar_crowned_world.png"))
+    hyper_render(*made["aar_ecumenopolis"], ring, 160, bg=(12, 14, 24, 255)).resize(
+        (40, 40), Image.LANCZOS).save(os.path.join(out_markets, "aar_hyper_ecumenopolis.png"))
     print("wrote aar_orbital_ring")
     for n in range(11, 16):
         population_icon(n).save(os.path.join(out_markets, "aar_population%d.png" % n))
@@ -588,8 +588,8 @@ def main():
             sheet.paste(lit.resize((1024, 512)), (0, 512))
             sheet.save(os.path.join(prev, name + "_maps.jpg"), quality=88)
             surface.crop((800, 300, 1312, 556)).save(os.path.join(prev, name + "_detail.png"))
-        crowned_render(*made["aar_ecumenopolis"], ring, 640, bg=(0, 0, 0, 255)).save(
-            os.path.join(prev, "crowned_world.png"))
+        hyper_render(*made["aar_ecumenopolis"], ring, 640, bg=(0, 0, 0, 255)).save(
+            os.path.join(prev, "hyper_ecumenopolis.png"))
         ring[0].crop((0, 0, 512, RING_H)).resize((1024, 256), Image.NEAREST).save(
             os.path.join(prev, "orbital_ring_detail.png"))
         strip = Image.new("RGBA", (5 * 48, 40), (30, 30, 36, 255))

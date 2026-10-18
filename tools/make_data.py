@@ -45,11 +45,12 @@ write("data/campaign/market_conditions.csv",
            "$MarketName is a single city from pole to pole. Its oceans run through pipes, its weather is "
            "scheduled, and its sky is lit all night by its own streets.",
            "graphics/icons/markets/aar_ecumenopolis.png", "21"],
-          ["Crowned World", "aar_crowned_world", "", "", "TRUE", PKG + ".conditions.CrownedWorld",
+          # Id and class are from 0.2.0, when this stage was called Crowned World; saves keep them.
+          ["Hyper-Ecumenopolis", "aar_crowned_world", "", "", "TRUE", PKG + ".conditions.CrownedWorld",
            "An orbital ring circles $marketName, carried on its own spin and tied to the surface by hundreds of "
            "space elevators. Its docks and shipyards run the whole way round, and from below it cuts the sky "
            "in two.",
-           "graphics/icons/markets/aar_crowned_world.png", "21"],
+           "graphics/icons/markets/aar_hyper_ecumenopolis.png", "21"],
           # Same row as the base game, with a script that knows an Omega core cannot simply be unplugged
           # from a colony that only it can run.
           ["AI Core Admin (hidden)", "ai_core_admin", "", "", "TRUE", PKG + ".campaign.OmegaAwareAICoreAdmin",
@@ -112,7 +113,7 @@ write("data/campaign/rules.csv", RULES_HEADER, [
 write("data/console/commands.csv", ["command", "class", "tags", "syntax", "help"], [
     ["aar_size", PKG + ".console.AarSize", "astral,cheat,market", "aar_size <3-15> [colony name]",
      "Sets a colony's size directly, up to 15 (Console Commands' own setmarketsize stops at 10). Updates the "
-     "population condition, the Arcology World, Ecumenopolis or Crowned World stage and the planet's look. Past 10 the colony "
+     "population condition, the Arcology World, Ecumenopolis or Hyper-Ecumenopolis stage and the planet's look. Past 10 the colony "
      "needs an Omega core administrator first. Uses the colony you are docked at if no name is given."],
     ["aar_growth", PKG + ".console.AarGrowth", "astral,cheat,market", "aar_growth <0-100> [colony name]",
      "Sets how far a colony has grown towards its next size, in percent. 99 makes it grow within days, "

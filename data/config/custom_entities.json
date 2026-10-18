@@ -1,5 +1,5 @@
 {
-	# The orbital ring of a Crowned World (size 15). Drawn by its plugin around the planet: the far
+	# The orbital ring of a Hyper-Ecumenopolis (size 15). Drawn by its plugin around the planet: the far
 	# half in TERRAIN_2, under the planet, and the near half in TERRAIN_3, over it.
 	"aar_orbital_ring":{
 		"defaultName":"Orbital Ring",

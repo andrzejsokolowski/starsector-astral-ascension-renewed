@@ -1,6 +1,10 @@
 package astralascensionrenewed.conditions;
 
-/** Size 15. The orbital ring around the planet is drawn by {@link astralascensionrenewed.campaign.OrbitalRing}. */
+/**
+ * Size 15, the Hyper-Ecumenopolis. The class keeps its 0.2.0 name (the stage was called Crowned World then)
+ * so saves from that version still load. The orbital ring is drawn by
+ * {@link astralascensionrenewed.campaign.OrbitalRing}.
+ */
 public class CrownedWorld extends AscensionStage {
 
     @Override

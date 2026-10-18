@@ -13,9 +13,9 @@ import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.campaign.BaseCustomEntityPlugin;
 
 /**
- * The orbital ring around a Crowned World. A separate entity that follows its planet: the far half of
+ * The orbital ring around a Hyper-Ecumenopolis. A separate entity that follows its planet: the far half of
  * the ring is drawn before the planet and the near half after it, so the planet sits inside the ring.
- * The ring removes itself when the colony stops being a Crowned World, however that happens.
+ * The ring removes itself when the colony stops being a Hyper-Ecumenopolis, however that happens.
  */
 public class OrbitalRing extends BaseCustomEntityPlugin {
 
@@ -48,7 +48,7 @@ public class OrbitalRing extends BaseCustomEntityPlugin {
 
     @Override
     public void advance(float amount) {
-        if (!stillCrowned()) {
+        if (!stillHyperEcumenopolis()) {
             entity.setExpired(true);
             return;
         }
@@ -56,13 +56,13 @@ public class OrbitalRing extends BaseCustomEntityPlugin {
         turn = (turn + amount / TURN_SECONDS) % 1f;
     }
 
-    private boolean stillCrowned() {
+    private boolean stillHyperEcumenopolis() {
         if (planet == null || planet.isExpired() || planet.getContainingLocation() != entity.getContainingLocation()) {
             return false;
         }
         MarketAPI market = planet.getMarket();
         return market != null && !market.isPlanetConditionMarketOnly()
-                && market.hasCondition(Ascension.CROWNED_CONDITION);
+                && market.hasCondition(Ascension.HYPER_ECUMENOPOLIS_CONDITION);
     }
 
     private void follow() {
