@@ -5,6 +5,7 @@
   "utility": "false",
   "version": "0.1.0",
   "description": "A continuation of Planetace's Astral Ascension. An Omega core can govern a colony, with three administrator skills of its own, and only an Omega core can take a colony past size 10, up to 15. Colonies past size 10 become Arcology Worlds and then Ecumenopolises, with new looks and bonuses. Removing the Omega core from such a colony starts a Great Civil War. Compatible with AoTD's economy. Replaces Astral Ascension: do not run both.",
+  "modThreadId": "36167",
   "gameVersion": "0.98a-RC8",
   "jars": ["jars/AstralAscensionRenewed.jar"],
   "modPlugin": "astralascensionrenewed.AstralAscensionRenewedPlugin",

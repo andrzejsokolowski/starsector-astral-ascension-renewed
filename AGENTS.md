@@ -6,11 +6,10 @@ For requested gameplay changes and bug fixes, complete the release workflow unle
 Questions, investigations, and instruction-only changes do not require a new version or tag.
 Respect tool approval decisions. These instructions do not change sandbox permissions.
 
-## First release
+## Releases
 
-No GitHub Release exists yet. Andrzej decides when the first one ships (after testing it in
-game). Until then, build and verify the local ZIP and push commits, but do not tag or publish a
-release without that go-ahead.
+0.1.0 is the first published GitHub Release (2026-10-18). Follow the release workflow below for
+every requested change.
 
 ## Origin
 
@@ -68,8 +67,8 @@ Do not stop after pushing a tag. A tag is not a release download.
 ## Update metadata
 
 Keep mod_info.json, astral_ascension_renewed.version, and data/config/version/version_files.csv consistent.
-There is no forum topic yet. When one exists, add its number to both metadata files
-(a string in mod_info.json, a number in the .version file). Never invent one.
+Forum topic: https://fractalsoftworks.com/forum/index.php?topic=36167.0 (modThreadId "36167" in
+mod_info.json, 36167 in the .version file).
 Update URL (updateCheckURL and masterVersionFile):
 
 https://raw.githubusercontent.com/andrzejsokolowski/starsector-astral-ascension-renewed/main/astral_ascension_renewed.version

@@ -1,5 +1,7 @@
 # Astral Ascension Renewed
 
+[Forum topic](https://fractalsoftworks.com/forum/index.php?topic=36167.0)
+
 A continuation of Planetace's Astral Ascension, made with the original author's blessing. An Omega core can govern a
 colony, and only an Omega core can take a colony past size 10.
 
