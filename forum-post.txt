@@ -30,7 +30,7 @@ The code is fully open source. You don't have to credit me. Claude Code built th
 [/list]
 [hr][center][size=12pt][b]Colonies Past Size 10[/b][/size][/center][hr]
 [list]
-[li]Colonies grow to size 10 on their own. Past 10, only a colony governed by an Omega core keeps growing, up to 15.[/li]
+[li]Colonies grow to size 10 on their own (the base game stops at 6; this is a setting). Past 10, only a colony governed by an Omega core keeps growing, up to 15.[/li]
 [li]Every size past 10 takes 1.5 times longer to reach than it normally would, and it compounds. Size 15 is a lifetime's work.[/li]
 [/list]
 [table]
