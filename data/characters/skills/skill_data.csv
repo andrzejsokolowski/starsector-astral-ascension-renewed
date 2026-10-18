@@ -1,0 +1,4 @@
+id,name,order,tier,reqPoints,reqPointsPerExtraSkill,description,author,combat officer,admiral,admin,tags,icon,
+aar_ethereal_enlightenment,Ethereal Enlightenment,36000,0,,,It does not manage the colony. It simply sees no reason for anything to be wasted.,Report to the Hegemony Directorate on AI-run worlds,,,TRUE,"npc_only, ai_core_only",graphics/icons/skills/aar_ethereal_enlightenment.png,
+aar_acumenious_oracle,Acumenious Oracle,36001,0,,,"Our raiders were met at every landing site, by defenders who had arrived before we chose where to land.",Debrief of a failed pirate raid,,,TRUE,"npc_only, ai_core_only",graphics/icons/skills/aar_acumenious_oracle.png,
+aar_delphic_optimiser,Delphic Optimiser,36002,0,,,Every freighter is loaded before it lands. Every contract is signed before it is offered.,A trader on the docks of an Omega-run world,,,TRUE,"npc_only, ai_core_only",graphics/icons/skills/aar_delphic_optimiser.png,

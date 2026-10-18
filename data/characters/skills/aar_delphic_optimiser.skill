@@ -1,0 +1,17 @@
+{
+	"id":"aar_delphic_optimiser",
+	"governingAptitude":"technology",
+	"compressHullmods":false,
+	"scope":"GOVERNED_OUTPOST",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"GOVERNED_OUTPOST", "script":"astralascensionrenewed.skills.DelphicOptimiser$Level1"},
+				{"type":"GOVERNED_OUTPOST", "script":"astralascensionrenewed.skills.DelphicOptimiser$Level2"},
+				{"type":"GOVERNED_OUTPOST", "script":"astralascensionrenewed.skills.DelphicOptimiser$Level3"},
+			]
+		},
+	],
+}

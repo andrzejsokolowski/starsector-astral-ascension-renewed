@@ -1,0 +1,17 @@
+{
+	"id":"aar_acumenious_oracle",
+	"governingAptitude":"technology",
+	"compressHullmods":false,
+	"scope":"GOVERNED_OUTPOST",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"GOVERNED_OUTPOST", "script":"astralascensionrenewed.skills.AcumeniousOracle$Level1"},
+				{"type":"GOVERNED_OUTPOST", "script":"astralascensionrenewed.skills.AcumeniousOracle$Level2"},
+				{"type":"GOVERNED_OUTPOST", "script":"astralascensionrenewed.skills.AcumeniousOracle$Level3"},
+			]
+		},
+	],
+}

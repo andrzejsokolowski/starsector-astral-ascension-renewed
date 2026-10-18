@@ -1,0 +1,14 @@
+id,trigger,conditions,script,text,options,notes
+aar_civilwar_init,RemoveAICoreAdmin,AarOmegaMegacity,ShowPic ai_core_uninstall,"You give the order to disconnect the Omega core governing $marketName.
+
+The reply arrives before the order has finished sending. It is not a refusal. It is a forecast: how many people $marketName holds, how many decisions a second it takes to keep them fed, housed and alive, and how many minds in the Sector can make them. The last number is one.
+
+A colony this size is too big to be governed by a lesser mind. Without the Omega core, $marketName will fall to anarchy.","aar_civilwar_remove:Order the Omega core removed anyway
+aar_civilwar_keep:Leave the Omega core in control",Shown instead of the base game's rogue AI dialog when the colony is past size 10.
+aar_civilwar_remove,DialogOptionSelected,$option == aar_civilwar_remove,,"The forecast is specific. The districts turn on each other within days. The Great Civil War that follows will leave $marketName at size 8, with an armed, ungoverned population living in the ruins.
+
+The Omega core itself will be returned to you.","aar_civilwar_confirm:Confirm the order
+aar_civilwar_keep:Leave the Omega core in control",
+aar_civilwar_confirm,DialogOptionSelected,$option == aar_civilwar_confirm,"AarGreatCivilWar
+DismissDialog override",,,override: the base game returns the core and adds no rogue AI.
+aar_civilwar_keep,DialogOptionSelected,$option == aar_civilwar_keep,DismissDialog ignore,,,

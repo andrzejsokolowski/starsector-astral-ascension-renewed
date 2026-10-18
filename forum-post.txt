@@ -1,0 +1,84 @@
+[center][img width=128]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/graphics/icons/astral-ascension-renewed.png?raw=true[/img]
+[size=28pt][url=https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/releases/latest][b]Astral Ascension Renewed[/b][/url][/size]
+[url=https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/releases/latest][img]https://img.shields.io/github/downloads/andrzejsokolowski/starsector-astral-ascension-renewed/total?style=for-the-badge&label=download[/img][/url]  [url=https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed][img]https://img.shields.io/github/v/release/andrzejsokolowski/starsector-astral-ascension-renewed?display_name=tag&sort=semver&style=for-the-badge&label=source[/img][/url]
+[/center]
+[center][b]
+WHAT DOES THIS MOD DO?
+- An Omega core can govern your colony, with three administrator skills of its own.
+- Only an Omega core can take a colony past size 10, up to size 15.
+
+
+Colonies past size 10 become Arcology Worlds, then Ecumenopolises: the planet turns into a city, lit day and night.
+Take the Omega core away from one and it falls into a Great Civil War.
+A continuation of Planetace's Astral Ascension, made with the original author's blessing.
+
+
+The code is fully open source. You don't have to credit me. Claude Code built this anyway.
+[color=red]Requires [b]LunaLib[/b].[/color]
+[/b][/center]
+[spoiler=Planets]
+[center][img]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/docs/arcology-world.png?raw=true[/img][/center]
+[center][img]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/docs/ecumenopolis.png?raw=true[/img][/center]
+[/spoiler]
+[center]
+[hr][center][size=12pt][b]The Omega Core Administrator[/b][/size][/center][hr]
+[list]
+[li]Assign an Omega core as administrator the same way as an Alpha core.[/li]
+[li][b]Ethereal Enlightenment:[/b] hazard rating -25%, ship quality +25%, every building's production x2 and demand halved, +1 maximum industries.[/li]
+[li][b]Acumenious Oracle:[/b] stability +3, ground defenses x3, fleet size x2.[/li]
+[li][b]Delphic Optimiser:[/b] colony income x1.25, colony upkeep x0.75, accessibility +50%.[/li]
+[/list]
+[hr][center][size=12pt][b]Colonies Past Size 10[/b][/size][/center][hr]
+[list]
+[li]Colonies grow to size 10 on their own. Past 10, only a colony governed by an Omega core keeps growing, up to 15.[/li]
+[li]Every size past 10 takes 1.5 times longer to reach than it normally would, and it compounds. Size 15 is a lifetime's work.[/li]
+[/list]
+[table]
+[tr][td][b]Size[/b][/td][td][b]Stage[/b][/td][td][b]Bonuses[/b][/td][/tr]
+[tr][td]11-12[/td][td]Arcology World[/td][td]+1 maximum industries, accessibility +20%, colony income x1.25, ground defenses x1.5, fleet size +25%, hazard rating -25%[/td][/tr]
+[tr][td]13-15[/td][td]Ecumenopolis[/td][td]+2 maximum industries, accessibility +40%, colony income x1.5, ground defenses x2, fleet size +50%, hazard rating -50%[/td][/tr]
+[/table]
+[hr][center][size=12pt][b]The Great Civil War[/b][/size][/center][hr]
+[list]
+[li]A colony past size 10 is too big to be governed by a lesser mind.[/li]
+[li]Try to remove its Omega core and you get a warning, the way the base game warns about a rogue Alpha core.[/li]
+[li]Go through with it and the colony drops to size 8, keeps an armed, ungoverned population in its ruins, and loses 5 stability for half a year. You get the core back.[/li]
+[/list]
+[hr][center][size=12pt][b]AoTD Compatibility[/b][/size][/center][hr]
+[list]
+[li]AoTD - Theory of Toolbox doubles food demand, domestic goods demand and farm output with every colony size. Past size 10 that doubling is held at its size-10 amount, so one size 15 world cannot outweigh the rest of the Sector.[/li]
+[li]Below size 11 nothing changes. It can be switched off in the settings.[/li]
+[/list]
+[hr][center][size=12pt][b]Settings[/b][/size][/center][hr]
+[list]
+[li]In LunaLib's settings menu ([b]Shift+F2[/b] in the campaign): the size limit without an Omega core (6 to 10), how much slower growth past 10 is, the AoTD cap, and Omega core drops.[/li]
+[/list]
+[/center]
+[spoiler=Console commands]
+With Console Commands installed. Leave out the colony name to use the colony you are docked at.
+[b]aar_size <3-15> [colony][/b] - set a colony's size, with its stage and planet look. Past 10 it also installs an Omega core administrator.
+[b]aar_omegaadmin [colony][/b] - install an Omega core administrator without using up a core.
+[b]aar_civilwar [colony][/b] - run the Great Civil War at once.
+[b]aar_growth <0-100> [colony][/b] - set how far a colony has grown towards its next size.
+[b]aar_status [colony][/b] - size, size limit, growth, administrator, stage and AoTD scaling.
+[/spoiler]
+[spoiler=FAQ]
+[b]Where do I get Omega cores?[/b]
+Destroyed Omega ships can drop the core that commanded them: 33% for a frigate, 66% for a destroyer, 99% for a cruiser, always for a capital. If Omega Core Everywhere is installed, its drop settings are used instead.
+[b]Can I run it with the original Astral Ascension?[/b]
+No. This mod replaces it, and the game will not start with both enabled.
+[b]Can I continue a save from the original Astral Ascension?[/b]
+No. Start a new game, or use a save that never had the original.
+[b]Can I add it to an existing save?[/b]
+Yes.
+[b]Can I remove it from a save?[/b]
+Not once a colony has an Omega core administrator or has grown past size 10.
+[b]What about big worlds from other mods?[/b]
+They are left alone, unless you give one an Omega core administrator.
+[/spoiler]
+[spoiler=Credits]
+[b]Astral Ascension[/b] by [b]Planetace[/b]: the idea of the Omega core administrator and its three skills, colonies past size 10, and ecumenopolis worlds. This mod is written from scratch with their permission and uses none of the original's code or art.
+[/spoiler]
+[spoiler=Version log]
+0.1.0 - first release.
+[/spoiler]

@@ -1,0 +1,6 @@
+{
+	# Rule commands used by the Great Civil War dialog in rules.csv.
+	"ruleCommandPackages":[
+		"astralascensionrenewed.rulecmd",
+	],
+}
