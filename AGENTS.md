@@ -6,6 +6,15 @@ For requested gameplay changes and bug fixes, complete the release workflow unle
 Questions, investigations, and instruction-only changes do not require a new version or tag.
 Respect tool approval decisions. These instructions do not change sandbox permissions.
 
+## Notion
+
+Tasks, history and test lists: the **Astral Ascension Renewed board** in Andrzej's Notion, under
+**Starsector mods** (`collection://9d16fa04-578d-4877-83bb-77ff7a861214`). Working rules and game
+API notes: **Claude Information** (`collection://7bf9b1d6-b9e5-4b62-87f1-757bbaa51919`), starting
+with "Start here: working on Starsector mods through Notion". Read the board before working, give
+every task a ticket (ticket ids start with AAR) and keep it current. The Notion tools are deferred:
+load them with ToolSearch first.
+
 ## Releases
 
 0.1.0 is the first published GitHub Release (2026-10-18). Follow the release workflow below for
