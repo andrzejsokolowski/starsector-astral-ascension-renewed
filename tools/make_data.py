@@ -106,12 +106,9 @@ write("data/campaign/rules.csv", RULES_HEADER, [
 
 write("data/console/commands.csv", ["command", "class", "tags", "syntax", "help"], [
     ["aar_size", PKG + ".console.AarSize", "astral,cheat,market", "aar_size <3-15> [colony name]",
-     "Sets a colony's size directly, up to 15. Updates the population condition, the Arcology World or "
-     "Ecumenopolis stage and the planet's look. Uses the colony you are docked at if no name is given."],
-    ["aar_omegaadmin", PKG + ".console.AarOmegaAdmin", "astral,cheat,market", "aar_omegaadmin [colony name]",
-     "Installs an Omega core administrator on a colony without using up an Omega core."],
-    ["aar_civilwar", PKG + ".console.AarCivilWar", "astral,cheat,market", "aar_civilwar [colony name]",
-     "Runs the Great Civil War on a colony at once: size 8, decivilized subpopulation, stability hit."],
+     "Sets a colony's size directly, up to 15 (Console Commands' own setmarketsize stops at 10). Updates the "
+     "population condition, the Arcology World or Ecumenopolis stage and the planet's look. Past 10 the colony "
+     "needs an Omega core administrator first. Uses the colony you are docked at if no name is given."],
     ["aar_growth", PKG + ".console.AarGrowth", "astral,cheat,market", "aar_growth <0-100> [colony name]",
      "Sets how far a colony has grown towards its next size, in percent. 99 makes it grow within days, "
      "if it is allowed to grow."],

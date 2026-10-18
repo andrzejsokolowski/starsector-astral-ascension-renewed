@@ -229,19 +229,6 @@ public final class Ascension {
         Global.getSector().getCampaignUI().addMessage(intel, MessageClickAction.COLONY_INFO, market);
     }
 
-    /** Gives a colony an Omega core administrator, the way the game installs any AI core admin. */
-    public static void installOmegaAdmin(MarketAPI market) {
-        PersonAPI person = new OmegaAdminPlugin().createPerson(Commodities.OMEGA_CORE, market.getFactionId(), 0L);
-        for (com.fs.starfarer.api.characters.AdminData admin : Global.getSector().getCharacterData().getAdmins()) {
-            if (admin.getMarket() == market) admin.setMarket(null);
-        }
-        market.setAdmin(person);
-        if (!market.hasCondition(Conditions.AI_CORE_ADMIN)) market.addCondition(Conditions.AI_CORE_ADMIN);
-        makeOmegaAware(market);
-        market.reapplyConditions();
-        market.reapplyIndustries();
-    }
-
     /**
      * The game decides whether an AI administrator may simply be unplugged through the market's
      * hidden ai_core_admin condition. A colony that had an Alpha core before this mod was installed

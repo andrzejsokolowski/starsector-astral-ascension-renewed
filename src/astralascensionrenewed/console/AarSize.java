@@ -27,9 +27,10 @@ public class AarSize implements BaseCommand {
         int was = market.getSize();
         if (size > Ascension.VANILLA_MAX && !Ascension.isOmegaGoverned(market)) {
             // Without one the colony would fall into the Great Civil War on the next frame.
-            Ascension.installOmegaAdmin(market);
-            Console.showMessage("Installed an Omega core administrator, which sizes past "
-                    + Ascension.VANILLA_MAX + " need.");
+            Console.showMessage(market.getName() + " needs an Omega core administrator to go past size "
+                    + Ascension.VANILLA_MAX + ". Get a core with \"additem omega_core\" and assign it in the "
+                    + "colony's administrator screen first.");
+            return CommandResult.ERROR;
         }
         Ascension.setSize(market, size);
         Console.showMessage(market.getName() + ": size " + was + " -> " + market.getSize() + ".");

@@ -56,13 +56,11 @@ With Console Commands installed:
 
 | Command | What it does |
 | --- | --- |
-| `aar_size <3-15> [colony]` | Sets a colony's size, with its stage and planet look. Past 10 it also installs an Omega core administrator. |
-| `aar_omegaadmin [colony]` | Installs an Omega core administrator without using up a core. |
-| `aar_civilwar [colony]` | Runs the Great Civil War on a colony at once. |
+| `aar_size <3-15> [colony]` | Sets a colony's size, with its stage and planet look. The base `setmarketsize` stops at 10. Past 10 the colony needs an Omega core administrator first. |
 | `aar_growth <0-100> [colony]` | Sets how far a colony has grown towards its next size, in percent. |
 | `aar_status [colony]` | Shows size, size limit, growth, administrator, stage and AoTD scaling. |
 
-Leave out the colony name to use the colony you are docked at.
+Leave out the colony name to use the colony you are docked at. Omega cores for testing: `additem omega_core`.
 
 ## Compatibility
 

@@ -29,7 +29,7 @@ kept. The mod refuses to start next to the original.
   colonies, production x2 / demand halved, growth slowdown past 10, stages, AoTD Theory of Toolbox
   cap, Great Civil War for colonies past 10 that lost their Omega core.
 - `campaign/Ascension` - size changes, stage conditions, planet look (with snapshot and restore in
-  market memory under `$aar_look_`), the Great Civil War, Omega admin install.
+  market memory under `$aar_look_`), the Great Civil War.
 - `campaign/OmegaAwareAICoreAdmin` - replaces the base game's hidden `ai_core_admin` condition script
   (row in `data/campaign/market_conditions.csv`) so the admin picker opens the RemoveAICoreAdmin
   dialog for Omega cores past size 10. The dialog is in `data/campaign/rules.csv`.

@@ -56,9 +56,7 @@ The code is fully open source. You don't have to credit me. Claude Code built th
 [/center]
 [spoiler=Console commands]
 With Console Commands installed. Leave out the colony name to use the colony you are docked at.
-[b]aar_size <3-15> [colony][/b] - set a colony's size, with its stage and planet look. Past 10 it also installs an Omega core administrator.
-[b]aar_omegaadmin [colony][/b] - install an Omega core administrator without using up a core.
-[b]aar_civilwar [colony][/b] - run the Great Civil War at once.
+[b]aar_size <3-15> [colony][/b] - set a colony's size past the usual 10, with its stage and planet look. Past 10 the colony needs an Omega core administrator first.
 [b]aar_growth <0-100> [colony][/b] - set how far a colony has grown towards its next size.
 [b]aar_status [colony][/b] - size, size limit, growth, administrator, stage and AoTD scaling.
 [/spoiler]
