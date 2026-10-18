@@ -1,0 +1,21 @@
+{
+	# The orbital ring of a Crowned World (size 15). Drawn by its plugin around the planet: the far
+	# half in TERRAIN_2, under the planet, and the near half in TERRAIN_3, over it.
+	"aar_orbital_ring":{
+		"defaultName":"Orbital Ring",
+		"nameInText":"orbital ring",
+		"shortName":"orbital ring",
+		"aOrAn":"an",
+		"isOrAre":"is",
+		"defaultRadius":0,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"renderCircleIndicator":false,
+		"renderCircleIndicatorSelectionFlash":false,
+		"interactable":false,
+		"tags":["non_clickable", "no_entity_tooltip"],
+		"layers":[TERRAIN_2, TERRAIN_3],
+		"pluginClass":"astralascensionrenewed.campaign.OrbitalRing",
+	},
+}

@@ -23,18 +23,18 @@ def write(path, header, rows):
 
 POPULATION = {
     11: "$MarketName is home to hundreds of billions of people. Its cities ran into each other long ago, "
-        "and the arcologies that hold them now reach into orbit.",
-    12: "A trillion souls live on $marketName, more than Old Earth ever held, even at the height of the Domain.",
-    13: "$MarketName houses tens of trillions. Every surface is built over, and the city goes as far down "
-        "as it goes up.",
-    14: "Hundreds of trillions live on $marketName. Its own people need a lifetime to learn their way around it.",
+        "and the arcologies that hold them now reach the upper atmosphere.",
+    12: "A trillion souls live on $marketName, more than Old Earth ever held.",
+    13: "$MarketName houses tens of trillions. Every surface is filled with concrete, and the city goes as far "
+        "down as it goes up.",
+    14: "Hundreds of trillions live on $marketName. People that are born here will never see nature.",
     15: "$MarketName holds a quadrillion lives. The Omega core that runs it is the only mind in the Sector "
-        "that can keep count.",
+        "that can keep everyone from endless warfare.",
 }
 
 write("data/campaign/market_conditions.csv",
       ["name", "id", "tags", "planetary", "decivRemove", "script", "desc", "icon", "order"],
-      [["Population", "population_%d" % n, "", "", "TRUE", "com.fs.starfarer.api.impl.campaign.econ.Population",
+      [["Population", "population_%d" % n, "", "", "TRUE", PKG + ".conditions.AarPopulation",
         desc, "graphics/icons/markets/aar_population%d.png" % n, "20"] for n, desc in POPULATION.items()]
       + [
           ["Arcology World", "aar_arcology_world", "", "", "TRUE", PKG + ".conditions.ArcologyWorld",
@@ -45,6 +45,11 @@ write("data/campaign/market_conditions.csv",
            "$MarketName is a single city from pole to pole. Its oceans run through pipes, its weather is "
            "scheduled, and its sky is lit all night by its own streets.",
            "graphics/icons/markets/aar_ecumenopolis.png", "21"],
+          ["Crowned World", "aar_crowned_world", "", "", "TRUE", PKG + ".conditions.CrownedWorld",
+           "An orbital ring circles $marketName, carried on its own spin and tied to the surface by hundreds of "
+           "space elevators. Its docks and shipyards run the whole way round, and from below it cuts the sky "
+           "in two.",
+           "graphics/icons/markets/aar_crowned_world.png", "21"],
           # Same row as the base game, with a script that knows an Omega core cannot simply be unplugged
           # from a colony that only it can run.
           ["AI Core Admin (hidden)", "ai_core_admin", "", "", "TRUE", PKG + ".campaign.OmegaAwareAICoreAdmin",
@@ -107,7 +112,7 @@ write("data/campaign/rules.csv", RULES_HEADER, [
 write("data/console/commands.csv", ["command", "class", "tags", "syntax", "help"], [
     ["aar_size", PKG + ".console.AarSize", "astral,cheat,market", "aar_size <3-15> [colony name]",
      "Sets a colony's size directly, up to 15 (Console Commands' own setmarketsize stops at 10). Updates the "
-     "population condition, the Arcology World or Ecumenopolis stage and the planet's look. Past 10 the colony "
+     "population condition, the Arcology World, Ecumenopolis or Crowned World stage and the planet's look. Past 10 the colony "
      "needs an Omega core administrator first. Uses the colony you are docked at if no name is given."],
     ["aar_growth", PKG + ".console.AarGrowth", "astral,cheat,market", "aar_growth <0-100> [colony name]",
      "Sets how far a colony has grown towards its next size, in percent. 99 makes it grow within days, "

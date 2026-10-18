@@ -6,6 +6,7 @@ import java.util.Random;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.PlanetAPI;
 import com.fs.starfarer.api.campaign.PlanetSpecAPI;
+import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.comm.CommMessageAPI.MessageClickAction;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
@@ -31,11 +32,15 @@ public final class Ascension {
 
     public static final String ARCOLOGY_CONDITION = "aar_arcology_world";
     public static final String ECUMENOPOLIS_CONDITION = "aar_ecumenopolis";
+    public static final String CROWNED_CONDITION = "aar_crowned_world";
+    public static final int ECUMENOPOLIS_SIZE = 13;
+    public static final int CROWNED_SIZE = 15;
     public static final String ARCOLOGY_PLANET = "aar_arcology";
     public static final String ECUMENOPOLIS_PLANET = "aar_ecumenopolis";
 
     private static final String LOOK = "$aar_look_";
     private static final String LOOK_STAGE = LOOK + "stage";
+    private static final String RING = "$aar_orbital_ring";
     private static final String CIVIL_WAR_ID = "aar_great_civil_war";
 
     private Ascension() {}
@@ -86,9 +91,11 @@ public final class Ascension {
     /** The stage condition and the planet's look follow the size. Cheap to call every frame. */
     public static void updateStage(MarketAPI market) {
         int size = market.getSize();
-        String want = size >= 13 ? ECUMENOPOLIS_CONDITION : size > VANILLA_MAX ? ARCOLOGY_CONDITION : null;
+        String want = size >= CROWNED_SIZE ? CROWNED_CONDITION
+                : size >= ECUMENOPOLIS_SIZE ? ECUMENOPOLIS_CONDITION
+                : size > VANILLA_MAX ? ARCOLOGY_CONDITION : null;
         boolean changed = false;
-        for (String stage : new String[] {ARCOLOGY_CONDITION, ECUMENOPOLIS_CONDITION}) {
+        for (String stage : new String[] {ARCOLOGY_CONDITION, ECUMENOPOLIS_CONDITION, CROWNED_CONDITION}) {
             if (!stage.equals(want) && market.hasCondition(stage)) {
                 market.removeCondition(stage);
                 changed = true;
@@ -103,9 +110,14 @@ public final class Ascension {
             market.reapplyIndustries();
         }
 
-        String look = ECUMENOPOLIS_CONDITION.equals(want) ? ECUMENOPOLIS_PLANET
-                : ARCOLOGY_CONDITION.equals(want) ? ARCOLOGY_PLANET : null;
+        // A Crowned World is an ecumenopolis with an orbital ring around it.
+        String look = ARCOLOGY_CONDITION.equals(want) ? ARCOLOGY_PLANET : want != null ? ECUMENOPOLIS_PLANET : null;
         MemoryAPI memory = market.getMemoryWithoutUpdate();
+        if (CROWNED_CONDITION.equals(want)) {
+            ensureRing(market);
+        } else {
+            memory.unset(RING);
+        }
         if (want == null) memory.unset(ASCENDED);
         String current = memory.contains(LOOK_STAGE) ? memory.getString(LOOK_STAGE) : null;
         if (look == null ? current == null : look.equals(current)) return;
@@ -132,6 +144,21 @@ public final class Ascension {
         planet.getSpec().setTilt(tilt);
         planet.getSpec().setPitch(pitch);
         planet.applySpecChanges();
+    }
+
+    /** The ring takes itself away once the colony is no longer a Crowned World; see {@link OrbitalRing}. */
+    private static void ensureRing(MarketAPI market) {
+        PlanetAPI planet = market.getPlanetEntity();
+        if (planet == null || planet.isStar() || planet.getContainingLocation() == null) return;
+        MemoryAPI memory = market.getMemoryWithoutUpdate();
+        Object existing = memory.get(RING);
+        if (existing instanceof SectorEntityToken) {
+            SectorEntityToken ring = (SectorEntityToken) existing;
+            if (!ring.isExpired() && ring.getContainingLocation() == planet.getContainingLocation()) return;
+        }
+        SectorEntityToken ring = planet.getContainingLocation().addCustomEntity(
+                null, null, OrbitalRing.ENTITY_TYPE, null, planet);
+        memory.set(RING, ring);
     }
 
     /**

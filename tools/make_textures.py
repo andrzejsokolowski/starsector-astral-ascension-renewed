@@ -290,6 +290,143 @@ def lights_image(rgb, inten):
     return Image.alpha_composite(halo, img)
 
 
+# ----------------------------------------------------------------------------- orbital ring
+
+# The ring texture runs along the ring (x, wrapping) and across it (y, inner edge at the top).
+RING_W, RING_H = 2048, 128
+# Same proportions as OrbitalRing.java: middle 1.55 planet radii, half width 0.17.
+RING_MIDDLE, RING_HALF = 1.55, 0.17
+PANEL = 32  # panel length along the ring; divides RING_W so the texture wraps cleanly
+
+
+def make_orbital_ring(seed=1515):
+    """The ring's structure (RGBA) and its night lights (RGBA). Both wrap along x."""
+    rng = np.random.default_rng(seed)
+    h, w = RING_H, RING_W
+    y = np.arange(h, dtype=np.float32)[:, None] * np.ones((1, w), np.float32)
+    x = np.ones((h, 1), np.float32) * np.arange(w, dtype=np.float32)[None, :]
+    panel = (x // PANEL).astype(int)
+    px = x % PANEL
+
+    col = np.zeros((h, w, 3), np.float32)
+    alpha = np.zeros((h, w), np.float32)
+    glow = np.zeros((h, w, 3), np.float32)
+    glow_a = np.zeros((h, w), np.float32)
+
+    def band(y0, y1):
+        return (y >= y0) & (y < y1)
+
+    rail_in, rail_out, deck = band(6, 13), band(115, 122), band(20, 108)
+    # Two thin rails apart from the deck, joined to it by struts: the ring reads as a lattice, not a strip.
+    struts = (band(13, 20) | band(108, 115)) & ((x % 128 < 5) | ((x + 64) % 128 < 2))
+    metal = np.array([0.62, 0.65, 0.70], np.float32)
+    for m in (rail_in, rail_out):
+        y0 = y[m].min()
+        shade = 0.9 + 0.25 * np.cos((y - y0 - 3) / 7 * np.pi)  # rounded, lit along its middle
+        col[m] = (metal * 1.15)[None, :] * np.clip(shade[m], 0, 1.3)[:, None]
+        alpha[m] = 1
+    col[struts] = metal * 0.75
+    alpha[struts] = 1
+
+    # Deck panels: one random shade each, with dark seams between them.
+    n = w // PANEL
+    shades = rng.uniform(0.78, 1.08, n).astype(np.float32)
+    tints = np.array([[0.62, 0.64, 0.68], [0.68, 0.66, 0.62], [0.56, 0.60, 0.66], [0.70, 0.71, 0.73]],
+                     np.float32)[rng.integers(0, 4, n)]
+    base = tints[panel] * shades[panel][..., None]
+    seam = (px < 1.5) | (np.abs(y - 63.5) > 42.5)
+    base = base * np.where(seam, 0.55, 1.0)[..., None]
+    col[deck] = base[deck]
+    alpha[deck] = 1
+
+    # Habitat blocks on the deck, a few per panel, with lit windows.
+    for i in range(n):
+        for _ in range(int(rng.integers(1, 4))):
+            bw, bh = int(rng.integers(8, 26)), int(rng.integers(10, 26))
+            bx = i * PANEL + int(rng.integers(2, PANEL - 4))
+            by = int(rng.integers(22, 56 - bh)) if rng.random() < 0.5 else int(rng.integers(72, 106 - bh))
+            xs = np.arange(bx, bx + bw) % w
+            ys = np.arange(by, by + bh)
+            tone = rng.uniform(0.7, 1.15)
+            col[np.ix_(ys, xs)] = np.clip(metal * tone * np.array([1.0, 1.0, 1.04], np.float32), 0, 1)
+            col[ys[0], xs] = np.clip(col[ys[0], xs] * 1.25, 0, 1)  # sunlit edge
+            col[ys[-1], xs] *= 0.6
+            wins = rng.random((len(ys), len(xs))) < 0.45
+            wins &= ((ys[:, None] - by) % 3 == 1) & ((np.arange(bw)[None, :]) % 3 == 1)
+            yy, xx = np.nonzero(wins)
+            warm = rng.random(len(yy)) < 0.8
+            glow[ys[yy], xs[xx]] = np.where(warm[:, None], np.array([1.0, 0.80, 0.52], np.float32),
+                                            np.array([0.75, 0.88, 1.0], np.float32))
+            glow_a[ys[yy], xs[xx]] = rng.uniform(0.6, 1.0, len(yy))
+
+    # The maglev channel down the middle, dark by day, one bright line by night.
+    chan = band(58, 70)
+    col[chan] = np.array([0.20, 0.22, 0.26], np.float32)[None, :] * (0.85 + 0.15 * (px[chan] < 2))[:, None]
+    glow[chan] = 0
+    glow_a[chan] = 0
+    line = band(63, 65)
+    glow[line] = [0.70, 0.86, 1.0]
+    glow_a[line] = 0.85
+
+    # Running lights on the rails and red beacons on the outer rail.
+    run = x % 64 < 3
+    for m in (band(8, 11), band(117, 120)):
+        sel = m & run
+        glow[sel] = [0.55, 0.85, 1.0]
+        glow_a[sel] = 1.0
+    beacon = band(116, 121) & (x % 256 < 5)
+    glow[beacon] = [1.0, 0.25, 0.20]
+    glow_a[beacon] = 1.0
+
+    structure = np.concatenate([np.clip(col, 0, 1), alpha[..., None]], -1)
+    lights = np.concatenate([np.clip(glow, 0, 1), np.clip(glow_a, 0, 1)[..., None]], -1)
+    s_img = Image.fromarray((structure * 255).astype(np.uint8), "RGBA")
+    l_img = Image.fromarray((lights * 255).astype(np.uint8), "RGBA")
+    # A soft halo makes the lights read from far away, as on the planets.
+    l_img = Image.alpha_composite(l_img.filter(ImageFilter.GaussianBlur(1.2)), l_img)
+    return s_img, l_img
+
+
+def ring_layer(structure, lights, size, planet_r, far, tilt_deg=15.0, pitch_deg=20.0, turn=0.0):
+    """The far or near half of the ring around a planet of radius planet_r pixels, centred in the image."""
+    tex = np.asarray(structure, dtype=np.float32) / 255
+    glw = np.asarray(lights, dtype=np.float32) / 255
+    ys, xs = np.mgrid[0:size, 0:size].astype(np.float32)
+    dx = xs + 0.5 - size / 2
+    dy = size / 2 - (ys + 0.5)
+    t = np.radians(tilt_deg)
+    lx = dx * np.cos(t) + dy * np.sin(t)
+    ly = -dx * np.sin(t) + dy * np.cos(t)
+    flat = min(max(np.sin(np.radians(abs(pitch_deg))), 0.26), 0.55)
+    ly = ly / flat
+    rho = np.sqrt(lx * lx + ly * ly) / planet_r
+    inner, outer = RING_MIDDLE - RING_HALF, RING_MIDDLE + RING_HALF
+    on = (rho >= inner) & (rho < outer) & ((ly > 0) == far)
+    ang = (np.arctan2(ly, lx) / (2 * np.pi) - turn) % 1.0
+    u = np.clip((ang * RING_W).astype(int), 0, RING_W - 1)
+    v = np.clip(((rho - inner) / (outer - inner) * RING_H).astype(int), 0, RING_H - 1)
+    c = tex[v, u]
+    g = glw[v, u]
+    # Lit from the upper left, like the planet previews; the right-hand part sits in shadow.
+    light = 0.55 + 0.45 * np.clip(-lx / (outer * planet_r), -1, 1)
+    rgb = c[..., :3] * light[..., None] + g[..., :3] * g[..., 3:4] * (1.2 - light)[..., None]
+    a = c[..., 3] * on
+    rgba = np.concatenate([np.clip(rgb, 0, 1), a[..., None]], -1)
+    return Image.fromarray((rgba * 255).astype(np.uint8), "RGBA")
+
+
+def crowned_render(surface, lights, ring, size, bg=(0, 0, 0, 0), rot=0.6):
+    """A planet inside its orbital ring: far half, then the planet, then the near half."""
+    planet_px = int(size / 2 / (RING_MIDDLE + RING_HALF + 0.04))
+    sph = render_sphere(surface, lights, planet_px * 2, rot=rot)
+    out = Image.new("RGBA", (size, size), bg)
+    out = Image.alpha_composite(out, ring_layer(*ring, size, planet_px, far=True))
+    layer = Image.new("RGBA", (size, size))
+    layer.paste(sph, (size // 2 - planet_px, size // 2 - planet_px))
+    out = Image.alpha_composite(out, layer)
+    return Image.alpha_composite(out, ring_layer(*ring, size, planet_px, far=False))
+
+
 # ----------------------------------------------------------------------------- previews and icons
 
 def render_sphere(surface, lights, size, light_dir=(-0.65, 0.45, 0.62), night_lights=True, rot=0.0):
@@ -416,6 +553,13 @@ def main():
 
     planet_icon(*made["aar_arcology"], 40).save(os.path.join(out_markets, "aar_arcology_world.png"))
     planet_icon(*made["aar_ecumenopolis"], 40).save(os.path.join(out_markets, "aar_ecumenopolis.png"))
+
+    ring = make_orbital_ring()
+    ring[0].save(os.path.join(out_planets, "aar_orbital_ring.png"), optimize=True)
+    ring[1].save(os.path.join(out_planets, "aar_orbital_ring_lights.png"), optimize=True)
+    crowned_render(*made["aar_ecumenopolis"], ring, 160, bg=(12, 14, 24, 255)).resize(
+        (40, 40), Image.LANCZOS).save(os.path.join(out_markets, "aar_crowned_world.png"))
+    print("wrote aar_orbital_ring")
     for n in range(11, 16):
         population_icon(n).save(os.path.join(out_markets, "aar_population%d.png" % n))
 
@@ -444,6 +588,10 @@ def main():
             sheet.paste(lit.resize((1024, 512)), (0, 512))
             sheet.save(os.path.join(prev, name + "_maps.jpg"), quality=88)
             surface.crop((800, 300, 1312, 556)).save(os.path.join(prev, name + "_detail.png"))
+        crowned_render(*made["aar_ecumenopolis"], ring, 640, bg=(0, 0, 0, 255)).save(
+            os.path.join(prev, "crowned_world.png"))
+        ring[0].crop((0, 0, 512, RING_H)).resize((1024, 256), Image.NEAREST).save(
+            os.path.join(prev, "orbital_ring_detail.png"))
         strip = Image.new("RGBA", (5 * 48, 40), (30, 30, 36, 255))
         for i, n in enumerate(range(11, 16)):
             strip.paste(population_icon(n), (i * 48, 0))

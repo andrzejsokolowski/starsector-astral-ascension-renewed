@@ -8,7 +8,7 @@ WHAT DOES THIS MOD DO?
 - Only an Omega core can take a colony past size 10, up to size 15.
 
 
-Colonies past size 10 become Arcology Worlds, then Ecumenopolises: the planet turns into a city, lit day and night.
+Colonies past size 10 become Arcology Worlds, then Ecumenopolises, then Crowned Worlds: the planet turns into a city, lit day and night, with an orbital ring at size 15.
 Take the Omega core away from one and it falls into a Great Civil War.
 A continuation of Planetace's Astral Ascension, made with the original author's blessing.
 
@@ -19,6 +19,7 @@ The code is fully open source. You don't have to credit me. Claude Code built th
 [spoiler=Planets]
 [center][img]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/docs/arcology-world.png?raw=true[/img][/center]
 [center][img]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/docs/ecumenopolis.png?raw=true[/img][/center]
+[center][img]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/docs/crowned-world.png?raw=true[/img][/center]
 [/spoiler]
 [center]
 [hr][center][size=12pt][b]The Omega Core Administrator[/b][/size][/center][hr]
@@ -36,8 +37,12 @@ The code is fully open source. You don't have to credit me. Claude Code built th
 [table]
 [tr][td][b]Size[/b][/td][td][b]Stage[/b][/td][td][b]Bonuses[/b][/td][/tr]
 [tr][td]11-12[/td][td]Arcology World[/td][td]+1 maximum industries, accessibility +20%, colony income x1.25, ground defenses x1.5, fleet size +25%, hazard rating -25%[/td][/tr]
-[tr][td]13-15[/td][td]Ecumenopolis[/td][td]+2 maximum industries, accessibility +40%, colony income x1.5, ground defenses x2, fleet size +50%, hazard rating -50%[/td][/tr]
+[tr][td]13-14[/td][td]Ecumenopolis[/td][td]+2 maximum industries, accessibility +40%, colony income x1.5, ground defenses x2, fleet size +50%, hazard rating -50%[/td][/tr]
+[tr][td]15[/td][td]Crowned World[/td][td]+3 maximum industries, accessibility +60%, colony income x2, ground defenses x3, fleet size +100%, hazard rating -75%, ship quality +25%[/td][/tr]
 [/table]
+[list]
+[li]So many people are hard to keep calm: stability -1 at size 11, -2 at sizes 12 and 13, -3 at sizes 14 and 15.[/li]
+[/list]
 [hr][center][size=12pt][b]The Great Civil War[/b][/size][/center][hr]
 [list]
 [li]A colony past size 10 is too big to be governed by a lesser mind.[/li]

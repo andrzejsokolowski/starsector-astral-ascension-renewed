@@ -41,7 +41,11 @@ kept. The mod refuses to start next to the original.
 - `campaign/OmegaAwareAICoreAdmin` - replaces the base game's hidden `ai_core_admin` condition script
   (row in `data/campaign/market_conditions.csv`) so the admin picker opens the RemoveAICoreAdmin
   dialog for Omega cores past size 10. The dialog is in `data/campaign/rules.csv`.
-- `conditions/` - Arcology World and Ecumenopolis. `skills/` - the three admin skills.
+- `conditions/` - Arcology World (11-12), Ecumenopolis (13-14), Crowned World (15), and
+  `AarPopulation` (population 11-15, stability -1 to -3). `skills/` - the three admin skills.
+- `campaign/OrbitalRing` - the Crowned World's ring: a custom entity (`data/config/custom_entities.json`)
+  that follows the planet, draws its far half in TERRAIN_2 and near half in TERRAIN_3, and expires
+  itself when the colony stops being a Crowned World.
 - `rulecmd/` - rule commands for the dialog (package listed in `data/config/settings.json`).
 - `console/` - Console Commands test commands (`data/console/commands.csv`). Only Console Commands
   loads these classes.

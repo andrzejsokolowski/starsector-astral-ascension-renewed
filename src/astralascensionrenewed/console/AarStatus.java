@@ -32,7 +32,8 @@ public class AarStatus implements BaseCommand {
         String admin = market.getAdmin() == null ? "none" : market.getAdmin().getNameString();
         out.append("  Administrator: ").append(admin)
                 .append(Ascension.isOmegaGoverned(market) ? " (Omega core)" : "").append('\n');
-        String stage = market.hasCondition(Ascension.ECUMENOPOLIS_CONDITION) ? "Ecumenopolis"
+        String stage = market.hasCondition(Ascension.CROWNED_CONDITION) ? "Crowned World"
+                : market.hasCondition(Ascension.ECUMENOPOLIS_CONDITION) ? "Ecumenopolis"
                 : market.hasCondition(Ascension.ARCOLOGY_CONDITION) ? "Arcology World" : "none";
         out.append("  Stage: ").append(stage);
         if (market.getPlanetEntity() != null) out.append(", planet type ").append(market.getPlanetEntity().getTypeId());

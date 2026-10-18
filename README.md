@@ -24,9 +24,13 @@ longer to reach than it normally would, compounding, so size 15 is a lifetime's 
 | Size | Stage | Bonuses |
 | --- | --- | --- |
 | 11-12 | Arcology World | +1 maximum industries, accessibility +20%, colony income x1.25, ground defenses x1.5, fleet size +25%, hazard rating -25% |
-| 13-15 | Ecumenopolis | +2 maximum industries, accessibility +40%, colony income x1.5, ground defenses x2, fleet size +50%, hazard rating -50% |
+| 13-14 | Ecumenopolis | +2 maximum industries, accessibility +40%, colony income x1.5, ground defenses x2, fleet size +50%, hazard rating -50% |
+| 15 | Crowned World | +3 maximum industries, accessibility +60%, colony income x2, ground defenses x3, fleet size +100%, hazard rating -75%, ship quality +25% |
 
-The planet itself turns into a city, day and night. It gets its old look back if the colony shrinks.
+So many people are hard to keep calm: stability -1 at size 11, -2 at sizes 12 and 13, -3 at sizes 14 and 15.
+
+The planet itself turns into a city, day and night, and a Crowned World gets an orbital ring around it.
+The planet gets its old look back if the colony shrinks.
 
 ## The Great Civil War
 

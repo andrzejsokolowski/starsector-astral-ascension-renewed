@@ -1,6 +1,6 @@
 package astralascensionrenewed.conditions;
 
-/** Sizes 13 to 15. */
+/** Sizes 13 and 14. */
 public class Ecumenopolis extends AscensionStage {
 
     @Override

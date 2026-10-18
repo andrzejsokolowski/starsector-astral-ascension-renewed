@@ -22,6 +22,11 @@ public abstract class AscensionStage extends BaseMarketConditionPlugin {
 
     protected abstract float hazard();
 
+    /** Only the last stage builds ships. */
+    protected float shipQuality() {
+        return 0f;
+    }
+
     @Override
     public void apply(String id) {
         super.apply(id);
@@ -32,6 +37,9 @@ public abstract class AscensionStage extends BaseMarketConditionPlugin {
         market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(id, groundDefenseMult(), name);
         market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyFlat(id, fleetSize(), name);
         market.getHazard().modifyFlat(id, hazard(), name);
+        if (shipQuality() != 0f) {
+            market.getStats().getDynamic().getMod(Stats.PRODUCTION_QUALITY_MOD).modifyFlat(id, shipQuality(), name);
+        }
     }
 
     @Override
@@ -43,6 +51,7 @@ public abstract class AscensionStage extends BaseMarketConditionPlugin {
         market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).unmodifyMult(id);
         market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodifyFlat(id);
         market.getHazard().unmodifyFlat(id);
+        market.getStats().getDynamic().getMod(Stats.PRODUCTION_QUALITY_MOD).unmodifyFlat(id);
     }
 
     @Override
@@ -56,6 +65,7 @@ public abstract class AscensionStage extends BaseMarketConditionPlugin {
         tooltip.addPara("Ground defenses %s", 3f, h, "x" + times(groundDefenseMult()));
         tooltip.addPara("%s fleet size", 3f, h, "+" + percent(fleetSize()) + "%");
         tooltip.addPara("%s hazard rating", 3f, h, percent(hazard()) + "%");
+        if (shipQuality() != 0f) tooltip.addPara("%s ship quality", 3f, h, "+" + percent(shipQuality()) + "%");
         tooltip.addPara("Needs an Omega core as administrator. Without one, the colony falls into a Great Civil "
                 + "War and is left at size %s.", pad, Misc.getNegativeHighlightColor(), "8");
     }
