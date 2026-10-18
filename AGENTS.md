@@ -15,6 +15,14 @@ with "Start here: working on Starsector mods through Notion". Read the board bef
 every task a ticket (ticket ids start with AAR) and keep it current. The Notion tools are deferred:
 load them with ToolSearch first.
 
+Update the board during the work, not only at release time. Before changing files, put the
+message on its ticket: a new request gets a new ticket (In progress), and a problem Andrzej
+reports on Needs Human Test work moves that ticket to Changes Requested with the notes quoted.
+Before ending the turn, update the ticket's body (What was done, How, Commits, Test list) and
+its Status, Version and End date. Read the board with `notion-query-data-sources` mode `view`
+on `view://3fd20ca7-5d20-811a-a5b6-000c07bebdfd` or `notion-fetch` a ticket. SQL and rows mode share a
+small quota that runs out. The workspace `AGENTS.md` has the full routine.
+
 ## Releases
 
 0.1.0 is the first published GitHub Release (2026-10-18). Follow the release workflow below for
@@ -41,11 +49,12 @@ kept. The mod refuses to start next to the original.
 - `campaign/OmegaAwareAICoreAdmin` - replaces the base game's hidden `ai_core_admin` condition script
   (row in `data/campaign/market_conditions.csv`) so the admin picker opens the RemoveAICoreAdmin
   dialog for Omega cores past size 10. The dialog is in `data/campaign/rules.csv`.
-- `conditions/` - Arcology World (11-12), Ecumenopolis (13-14), Crowned World (15), and
+- `conditions/` - Arcology World (11-12), Ecumenopolis (13-14), Hyper-Ecumenopolis (15; condition id
+  `aar_crowned_world` and class `CrownedWorld` keep 0.2.0 save compatibility), and
   `AarPopulation` (population 11-15, stability -1 to -3). `skills/` - the three admin skills.
-- `campaign/OrbitalRing` - the Crowned World's ring: a custom entity (`data/config/custom_entities.json`)
+- `campaign/OrbitalRing` - the Hyper-Ecumenopolis's ring: a custom entity (`data/config/custom_entities.json`)
   that follows the planet, draws its far half in TERRAIN_2 and near half in TERRAIN_3, and expires
-  itself when the colony stops being a Crowned World.
+  itself when the colony stops being a Hyper-Ecumenopolis.
 - `rulecmd/` - rule commands for the dialog (package listed in `data/config/settings.json`).
 - `console/` - Console Commands test commands (`data/console/commands.csv`). Only Console Commands
   loads these classes.
@@ -60,6 +69,7 @@ kept. The mod refuses to start next to the original.
 
 ## Required release workflow
 
+0. Find or create the ticket on this mod's Notion board and set it In progress.
 1. Preserve unrelated changes from the user and other agents.
 2. Implement the requested change and update the version in mod_info.json and astral_ascension_renewed.version.
 3. Run ./gradlew releaseZip to build, check, and package AstralAscensionRenewed.zip.
@@ -72,7 +82,9 @@ kept. The mod refuses to start next to the original.
 10. Mark a new stable release as latest unless the user requests otherwise.
 11. Make sure that the public version file and the downloaded ZIP report the tagged version.
 12. Compare the downloaded ZIP's SHA-256 hash with the tested local ZIP.
-13. Give the user the release link and local ZIP location.
+13. Update the Notion ticket (What was done, How, Commits, Test list, then Status Needs Human Test,
+   Version and End date) and read the status back.
+14. Give the user the release link, local ZIP location and ticket id.
 
 Every new version tag created or pushed by an agent requires a matching published release with the ZIP attached.
 Do not stop after pushing a tag. A tag is not a release download.
