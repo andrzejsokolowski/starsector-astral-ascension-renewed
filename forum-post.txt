@@ -14,7 +14,6 @@ Take the Omega core away from one and it falls into a Great Civil War.
 A continuation of Planetace's Astral Ascension, made with the original author's blessing.
 
 
-The code is fully open source. You don't have to credit me. Claude Code built this anyway.
 [color=red]Requires [b]LunaLib[/b].[/color]
 [/b][/center]
 [spoiler=Planets]
@@ -83,6 +82,17 @@ They are left alone, unless you give one an Omega core administrator.
 [spoiler=Credits]
 [b]Astral Ascension[/b] by [b]Planetace[/b]: the idea of the Omega core administrator and its three skills, colonies past size 10, and ecumenopolis worlds. This mod is written from scratch with their permission and uses none of the original's code or art.
 [/spoiler]
+[spoiler=AI use disclaimer]Some or all assets and code in this mod were created using AI tools:
+[list]
+[li]Code: Claude Code (Claude Opus 5.5)[/li]
+[li]Text (readme and this post): Claude Code (Claude Opus 5.5)[/li]
+[li]Icons and planet art: Gemini[/li][/list]
+[/spoiler]
+
+[spoiler=License]
+This mod is under the CC0 (Creative Commons Zero) License, allowing you to do whatever you want with the code, without giving any credit to anyone.
+[/spoiler]
+
 [spoiler=Version log]
 1.0.0 - first stable release. No gameplay changes since 0.2.1.
 0.2.1 - the size 15 stage is called Hyper-Ecumenopolis.
