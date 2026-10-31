@@ -55,6 +55,9 @@ kept. The mod refuses to start next to the original.
 - `campaign/OrbitalRing` - the Hyper-Ecumenopolis's ring: a custom entity (`data/config/custom_entities.json`)
   that follows the planet, draws its far half in TERRAIN_2 and near half in TERRAIN_3, and expires
   itself when the colony stops being a Hyper-Ecumenopolis.
+- `campaign/AwakeningGuard` - only with AoTD - Dreams of the Past (`Cryo_but_better`): adds its
+  Domain Majority condition to colonies with a cryosleeper/ark awakening running, because the awakening
+  adds it only when it grows the colony and crashes at the end without it (colonies of 7+ never grow from it).
 - `rulecmd/` - rule commands for the dialog (package listed in `data/config/settings.json`).
 - `console/` - Console Commands test commands (`data/console/commands.csv`). Only Console Commands
   loads these classes.

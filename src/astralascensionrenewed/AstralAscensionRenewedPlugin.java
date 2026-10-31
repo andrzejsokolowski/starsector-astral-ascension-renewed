@@ -5,6 +5,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.util.Misc;
 
 import astralascensionrenewed.campaign.AscensionScript;
+import astralascensionrenewed.campaign.AwakeningGuard;
 import lunalib.lunaSettings.LunaSettings;
 import lunalib.lunaSettings.LunaSettingsListener;
 
@@ -29,6 +30,9 @@ public class AstralAscensionRenewedPlugin extends BaseModPlugin {
     public void onGameLoad(boolean newGame) {
         applySettings();
         AscensionScript.install();
+        if (Global.getSettings().getModManager().isModEnabled(AwakeningGuard.DREAMS_OF_THE_PAST_ID)) {
+            AwakeningGuard.install();
+        }
     }
 
     /** The colony size limit is one number the game reads everywhere, so it is set directly. */

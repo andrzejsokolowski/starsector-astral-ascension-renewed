@@ -26,6 +26,8 @@ dependencies {
     // Console Commands is optional for players. Only the classes in the console package touch it,
     // and Console Commands is the only thing that ever loads them (from data/console/commands.csv).
     compileOnly fileTree(dir: "${starsectorPath}/mods", include: '**/lw_Console.jar')
+    // AoTD - Dreams of the Past is optional. Only campaign/AwakeningGuard touches it, and only when it is enabled.
+    compileOnly fileTree(dir: "${starsectorPath}/mods", include: '**/Cryos.jar')
     testImplementation files(sourceSets.main.compileClasspath)
 }
 
