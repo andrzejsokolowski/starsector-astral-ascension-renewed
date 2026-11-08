@@ -1,5 +1,6 @@
 {
 	"masterVersionFile":"https://raw.githubusercontent.com/andrzejsokolowski/starsector-astral-ascension-renewed/main/astral_ascension_renewed.version",
+	"changelogURL":"https://raw.githubusercontent.com/andrzejsokolowski/starsector-astral-ascension-renewed/main/changelog.txt",
 	"modName":"Astral Ascension Renewed",
 	"modThreadId":36167,
 	"modVersion": {

@@ -1,0 +1,17 @@
+Version 1.0.1 (2026-10-31)
+- Fixed a crash when an AoTD - Dreams of the Past cryosleeper or ark awakening finished on a colony of size 7 or larger.
+
+Version 1.0.0 (2026-10-18)
+- First stable release. No gameplay changes since 0.2.1.
+
+Version 0.2.1 (2026-10-18)
+- The size 15 stage is called Hyper-Ecumenopolis.
+
+Version 0.2.0 (2026-10-18)
+- New size 15 stage with an orbital ring around the planet.
+- Ecumenopolis is now sizes 13-14.
+- Colonies past size 10 lose stability.
+- Rewritten size descriptions.
+
+Version 0.1.0 (2026-10-18)
+- First release.
