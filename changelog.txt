@@ -1,3 +1,6 @@
+Version 1.0.3 (2026-11-10)
+- Works with any OddiszCommons from 0.2.0 on: the game no longer turns this mod off as incompatible when a newer OddiszCommons is installed.
+
 Version 1.0.2 (2026-11-09)
 - Now requires OddiszCommons 0.2.0, which keeps this mod's colony changes in its shared ledger.
 - An error while taking back one of this mod's colony changes, or while recalculating a colony, is now written to the log instead of crashing the game.
