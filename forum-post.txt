@@ -14,7 +14,7 @@ Take the Omega core away from one and it falls into a Great Civil War.
 A continuation of Planetace's Astral Ascension, made with the original author's blessing.
 
 
-[color=red]Requires [b]LunaLib[/b] and [b][url=https://github.com/andrzejsokolowski/starsector-oddisz-commons/releases/latest]OddiszCommons[/url][/b].[/color]
+[color=red]Requires [b]LunaLib[/b] and [b][url=https://fractalsoftworks.com/forum/index.php?topic=36282]OddiszCommons[/url][/b].[/color]
 [/b][/center]
 [spoiler=Planets]
 [center][img]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/docs/arcology-world.png?raw=true[/img][/center]

@@ -80,6 +80,7 @@ Leave out the colony name to use the colony you are docked at. Omega cores for t
 ## Requirements
 
 - [LunaLib](https://fractalsoftworks.com/forum/index.php?topic=25658.0)
+- [OddiszCommons](https://fractalsoftworks.com/forum/index.php?topic=36282) 0.2.0 or newer
 
 ## Building
 
