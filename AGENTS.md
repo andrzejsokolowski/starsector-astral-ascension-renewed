@@ -43,7 +43,8 @@ kept. The mod refuses to start next to the original.
 - `campaign/AarCampaignPlugin` + `OmegaAdminPlugin` - make the Omega core an administrator.
 - `campaign/AscensionScript` - transient every-frame script: size limit 15 for Omega-governed
   colonies, production x2 / demand halved, growth slowdown past 10, stages, AoTD Theory of Toolbox
-  cap, Great Civil War for colonies past 10 that lost their Omega core.
+  cap, Great Civil War for colonies past 10 that lost their Omega core. Its changes go through
+  OddiszCommons' `oddiszcommons.ledger.Ledger` (a required mod since 1.0.2), swept each frame.
 - `campaign/Ascension` - size changes, stage conditions, planet look (with snapshot and restore in
   market memory under `$aar_look_`), the Great Civil War.
 - `campaign/OmegaAwareAICoreAdmin` - replaces the base game's hidden `ai_core_admin` condition script

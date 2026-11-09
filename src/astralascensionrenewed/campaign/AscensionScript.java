@@ -1,5 +1,7 @@
 package astralascensionrenewed.campaign;
 
+import oddiszcommons.ledger.Ledger;
+
 import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
@@ -47,7 +49,7 @@ public final class AscensionScript implements EveryFrameScript {
 
     private static final Logger log = Global.getLogger(AscensionScript.class);
 
-    private final Ledger ledger = new Ledger();
+    private final Ledger ledger = new Ledger("Astral Ascension Renewed");
     private final MarketImmigrationModifier strain = new GrowthStrain();
     private final boolean toolbox = Global.getSettings().getModManager().isModEnabled(TOOLBOX_ID);
     private boolean failed;

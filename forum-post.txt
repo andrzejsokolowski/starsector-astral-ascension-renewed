@@ -14,7 +14,7 @@ Take the Omega core away from one and it falls into a Great Civil War.
 A continuation of Planetace's Astral Ascension, made with the original author's blessing.
 
 
-[color=red]Requires [b]LunaLib[/b].[/color]
+[color=red]Requires [b]LunaLib[/b] and [b][url=https://github.com/andrzejsokolowski/starsector-oddisz-commons/releases/latest]OddiszCommons[/url][/b].[/color]
 [/b][/center]
 [spoiler=Planets]
 [center][img]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/docs/arcology-world.png?raw=true[/img][/center]
@@ -94,6 +94,7 @@ This mod is under the CC0 (Creative Commons Zero) License, allowing you to do wh
 [/spoiler]
 
 [spoiler=Version log]
+1.0.2 - now requires OddiszCommons 0.2.0, which keeps this mod's colony changes in its shared ledger. an error while taking back one of this mod's colony changes, or while recalculating a colony, is now written to the log instead of crashing the game.
 1.0.1 - fixed a crash when an AoTD - Dreams of the Past cryosleeper or ark awakening finished on a colony of size 7 or larger.
 1.0.0 - first stable release. No gameplay changes since 0.2.1.
 0.2.1 - the size 15 stage is called Hyper-Ecumenopolis.

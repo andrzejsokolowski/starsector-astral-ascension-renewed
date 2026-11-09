@@ -1,3 +1,7 @@
+Version 1.0.2 (2026-11-09)
+- Now requires OddiszCommons 0.2.0, which keeps this mod's colony changes in its shared ledger.
+- An error while taking back one of this mod's colony changes, or while recalculating a colony, is now written to the log instead of crashing the game.
+
 Version 1.0.1 (2026-10-31)
 - Fixed a crash when an AoTD - Dreams of the Past cryosleeper or ark awakening finished on a colony of size 7 or larger.
 

@@ -23,6 +23,9 @@ dependencies {
     compileOnly fileTree(dir: "${starsectorPath}/starsector-core", include: '*.jar')
     // LunaLib supplies the settings page. Found wherever the mod happens to be installed.
     compileOnly fileTree(dir: "${starsectorPath}/mods", include: '**/LunaLib.jar')
+    // OddiszCommons supplies the shared ledger: the sibling project's build, or an installed copy.
+    compileOnly files('../OddiszCommons/jars/OddiszCommons.jar')
+    compileOnly fileTree(dir: "${starsectorPath}/mods", include: '**/OddiszCommons.jar')
     // Console Commands is optional for players. Only the classes in the console package touch it,
     // and Console Commands is the only thing that ever loads them (from data/console/commands.csv).
     compileOnly fileTree(dir: "${starsectorPath}/mods", include: '**/lw_Console.jar')
