@@ -1,4 +1,4 @@
-[center][img width=128]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/graphics/icons/astral-ascension-renewed.png?raw=true[/img]
+[center][img width=128]https://raw.githubusercontent.com/andrzejsokolowski/starsector-astral-ascension-renewed/main/icon.png[/img]
 [size=28pt][url=https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/releases/latest][b]Astral Ascension Renewed[/b][/url][/size]
 [url=https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/releases/latest][img]https://img.shields.io/github/downloads/andrzejsokolowski/starsector-astral-ascension-renewed/total?style=for-the-badge&label=download[/img][/url]  [url=https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed][img]https://img.shields.io/github/v/release/andrzejsokolowski/starsector-astral-ascension-renewed?display_name=tag&sort=semver&style=for-the-badge&label=source[/img][/url]
 [/center]
@@ -94,6 +94,7 @@ This mod is under the CC0 (Creative Commons Zero) License, allowing you to do wh
 [/spoiler]
 
 [spoiler=Version log]
+1.0.4 - new gold icon in mod managers (TriOS) and in LunaLib's settings.
 1.0.3 - works with any OddiszCommons from 0.2.0 on: the game no longer turns this mod off as incompatible when a newer OddiszCommons is installed.
 1.0.2 - now requires OddiszCommons 0.2.0, which keeps this mod's colony changes in its shared ledger. an error while taking back one of this mod's colony changes, or while recalculating a colony, is now written to the log instead of crashing the game.
 1.0.1 - fixed a crash when an AoTD - Dreams of the Past cryosleeper or ark awakening finished on a colony of size 7 or larger.

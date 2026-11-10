@@ -140,7 +140,7 @@ tasks.named('check') {
 // Only what the game loads.
 def releaseFiles = copySpec {
     from(projectDir) {
-        include 'mod_info.json', 'astral_ascension_renewed.version'
+        include 'mod_info.json', 'astral_ascension_renewed.version', 'icon.png'
         include 'data/**', 'graphics/**', 'jars/AstralAscensionRenewed.jar'
     }
 }
