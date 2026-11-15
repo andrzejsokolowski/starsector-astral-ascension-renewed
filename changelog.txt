@@ -1,3 +1,6 @@
+Version 1.1.0 (2026-11-15)
+- Updated for Starsector 0.98.5a.
+
 Version 1.0.4 (2026-11-10)
 - New gold icon in mod managers (TriOS) and in LunaLib's settings.
 
