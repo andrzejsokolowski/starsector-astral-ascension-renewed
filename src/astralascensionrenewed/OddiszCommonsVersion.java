@@ -22,7 +22,7 @@ final class OddiszCommonsVersion {
         ModSpecAPI spec = Global.getSettings().getModManager().getModSpec(ID);
         if (spec == null) return; // The launcher already refuses to start without it.
         if (atLeast(spec.getVersion(), MIN_MAJOR, MIN_MINOR)) return;
-        throw new RuntimeException("Astral Ascension Renewed needs OddiszCommons " + MIN_MAJOR + "." + MIN_MINOR
+        throw new RuntimeException("Colonial Hypergrowth needs OddiszCommons " + MIN_MAJOR + "." + MIN_MINOR
                 + ".0 or newer, but " + spec.getVersion() + " is installed. Update it: " + TOPIC);
     }
 

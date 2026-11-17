@@ -1,4 +1,4 @@
-# Astral Ascension Renewed
+# Colonial Hypergrowth
 
 These instructions apply to this repository, including when it is opened without the parent mod workspace.
 The workspace `AGENTS.md` one folder up still governs releases, packaging, Git identity and communication.
@@ -8,7 +8,7 @@ Respect tool approval decisions. These instructions do not change sandbox permis
 
 ## Notion
 
-Tasks, history and test lists: the **Astral Ascension Renewed board** in Andrzej's Notion, under
+Tasks, history and test lists: the **Colonial Hypergrowth board** in Andrzej's Notion, under
 **Starsector mods** (`collection://9d16fa04-578d-4877-83bb-77ff7a861214`). Working rules and game
 API notes: **Claude Information** (`collection://7bf9b1d6-b9e5-4b62-87f1-757bbaa51919`), starting
 with "Start here: working on Starsector mods through Notion". Read the board before working, give
@@ -27,6 +27,14 @@ small quota that runs out. The workspace `AGENTS.md` has the full routine.
 
 0.1.0 is the first published GitHub Release (2026-10-18); 1.0.0 is the first stable one (2026-10-18). Follow the release workflow below for
 every requested change.
+
+## Name
+
+Called Astral Ascension Renewed until 1.1.0; renamed to Colonial Hypergrowth in 1.2.0 (2026-11-17).
+Only the names players see changed. The mod id `astral_ascension_renewed`, the `aar_` ids, the
+`astralascensionrenewed` Java packages and `astral_ascension_renewed.version` stay: saves store
+condition ids and class names, and LunaLib keys settings by mod id. Do not rename them.
+The install folder, ZIP and JAR are `ColonialHypergrowth`.
 
 ## Origin
 
@@ -76,12 +84,12 @@ kept. The mod refuses to start next to the original.
 0. Find or create the ticket on this mod's Notion board and set it In progress.
 1. Preserve unrelated changes from the user and other agents.
 2. Implement the requested change and update the version in mod_info.json and astral_ascension_renewed.version.
-3. Run ./gradlew releaseZip to build, check, and package AstralAscensionRenewed.zip.
+3. Run ./gradlew releaseZip to build, check, and package ColonialHypergrowth.zip.
 4. Make sure that the ZIP contains the updated metadata, current JAR, data and graphics.
 5. Commit the completed change on main with the existing personal Git identity.
 6. Tag the commit v<version> and push the commit and tag to the existing personal GitHub origin.
 7. Create a draft GitHub Release for that exact tag.
-8. Attach the tested AstralAscensionRenewed.zip to the draft.
+8. Attach the tested ColonialHypergrowth.zip to the draft.
 9. Publish the release after the upload succeeds.
 10. Mark a new stable release as latest unless the user requests otherwise.
 11. Make sure that the public version file and the downloaded ZIP report the tagged version.
@@ -100,11 +108,11 @@ Forum topic: https://fractalsoftworks.com/forum/index.php?topic=36167.0 (modThre
 mod_info.json, 36167 in the .version file).
 Update URL (updateCheckURL and masterVersionFile):
 
-https://raw.githubusercontent.com/andrzejsokolowski/starsector-astral-ascension-renewed/main/astral_ascension_renewed.version
+https://raw.githubusercontent.com/andrzejsokolowski/starsector-colonial-hypergrowth/main/astral_ascension_renewed.version
 
-directDownloadURL, exact asset name AstralAscensionRenewed.zip:
+directDownloadURL, exact asset name ColonialHypergrowth.zip:
 
-https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/releases/latest/download/AstralAscensionRenewed.zip
+https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/releases/latest/download/ColonialHypergrowth.zip
 
 ## Release notes: changelog only
 

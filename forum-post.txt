@@ -1,6 +1,6 @@
-[center][img width=128]https://raw.githubusercontent.com/andrzejsokolowski/starsector-astral-ascension-renewed/main/icon.png[/img]
-[size=28pt][url=https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/releases/latest][b]Astral Ascension Renewed[/b][/url][/size]
-[url=https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/releases/latest][img]https://img.shields.io/github/downloads/andrzejsokolowski/starsector-astral-ascension-renewed/total?style=for-the-badge&label=download[/img][/url]  [url=https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed][img]https://img.shields.io/github/v/release/andrzejsokolowski/starsector-astral-ascension-renewed?display_name=tag&sort=semver&style=for-the-badge&label=source[/img][/url]
+[center][img width=128]https://raw.githubusercontent.com/andrzejsokolowski/starsector-colonial-hypergrowth/main/icon.png[/img]
+[size=28pt][url=https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/releases/latest][b]Colonial Hypergrowth[/b][/url][/size]
+[url=https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/releases/latest][img]https://img.shields.io/github/downloads/andrzejsokolowski/starsector-colonial-hypergrowth/total?style=for-the-badge&label=download[/img][/url]  [url=https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth][img]https://img.shields.io/github/v/release/andrzejsokolowski/starsector-colonial-hypergrowth?display_name=tag&sort=semver&style=for-the-badge&label=source[/img][/url]
 [/center]
 [center][b]
 WHAT DOES THIS MOD DO?
@@ -10,17 +10,17 @@ WHAT DOES THIS MOD DO?
 
 Colonies past size 10 become Arcology Worlds, then Ecumenopolises, then Hyper-Ecumenopolises: the planet turns into a city, lit day and night, with an orbital ring at size 15.
 Take the Omega core away from one and it falls into a Great Civil War.
-A continuation of Planetace's Astral Ascension, made with the original author's blessing.
+Formerly Astral Ascension Renewed. A continuation of Planetace's Astral Ascension, made with the original author's blessing.
 
 
 [color=red]Requires [b]LunaLib[/b] and [b][url=https://fractalsoftworks.com/forum/index.php?topic=36282]OddiszCommons[/url][/b].[/color]
 [/b][/center]
 [spoiler=Screenshots]
-[center][img]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/screenshots/01-hyper-ecumenopolis-orbit.png?raw=true[/img]
-[img]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/screenshots/02-arcology-world.png?raw=true[/img]
-[img]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/screenshots/03-ecumenopolis.png?raw=true[/img]
-[img]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/screenshots/04-hyper-ecumenopolis.png?raw=true[/img]
-[img]https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/blob/main/screenshots/05-omega-admin-acumenious-oracle.webp?raw=true[/img][/center]
+[center][img]https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/blob/main/screenshots/01-hyper-ecumenopolis-orbit.png?raw=true[/img]
+[img]https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/blob/main/screenshots/02-arcology-world.png?raw=true[/img]
+[img]https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/blob/main/screenshots/03-ecumenopolis.png?raw=true[/img]
+[img]https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/blob/main/screenshots/04-hyper-ecumenopolis.png?raw=true[/img]
+[img]https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/blob/main/screenshots/05-omega-admin-acumenious-oracle.webp?raw=true[/img][/center]
 [/spoiler]
 [center]
 [hr][center][size=12pt][b]The Omega Core Administrator[/b][/size][/center][hr]
@@ -95,6 +95,7 @@ This mod is under the CC0 (Creative Commons Zero) License, allowing you to do wh
 [/spoiler]
 
 [spoiler=Version log]
+1.2.0 - renamed from Astral Ascension Renewed to Colonial Hypergrowth. Saves and settings carry over.
 1.1.0 - updated for Starsector 0.98.5a.
 1.0.4 - new gold icon in mod managers (TriOS) and in LunaLib's settings.
 1.0.3 - works with any OddiszCommons from 0.2.0 on: the game no longer turns this mod off as incompatible when a newer OddiszCommons is installed.

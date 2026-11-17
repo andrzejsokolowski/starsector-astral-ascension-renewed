@@ -1,4 +1,4 @@
-"""Generates the planet textures, city lights and icons for Astral Ascension Renewed.
+"""Generates the planet textures, city lights and icons for Colonial Hypergrowth.
 
 Everything is procedural and seeded, so running it again gives the same files.
 Noise is evaluated on the unit sphere in 3D, so the equirectangular maps have no seam and no

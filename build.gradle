@@ -36,7 +36,7 @@ dependencies {
 
 jar {
     destinationDirectory = file('jars')
-    archiveFileName = 'AstralAscensionRenewed.jar'
+    archiveFileName = 'ColonialHypergrowth.jar'
 }
 
 // Starsector's classloader refuses java.io, java.nio.file and java.lang.reflect to mod code, and the
@@ -78,21 +78,21 @@ tasks.register('checkVersionMetadata') {
         def parts = ['major', 'minor', 'patch'].collect { remote.modVersion?.get(it)?.toString() }
         if (parts.any { it == null || !(it ==~ /\d+/) } || info.version != parts.join('.'))
             throw new GradleException('mod_info.json and astral_ascension_renewed.version must have the same numeric version')
-        def masterUrl = 'https://raw.githubusercontent.com/andrzejsokolowski/starsector-astral-ascension-renewed/main/astral_ascension_renewed.version'
-        def downloadUrl = 'https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/releases/latest/download/AstralAscensionRenewed.zip'
+        def masterUrl = 'https://raw.githubusercontent.com/andrzejsokolowski/starsector-colonial-hypergrowth/main/astral_ascension_renewed.version'
+        def downloadUrl = 'https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/releases/latest/download/ColonialHypergrowth.zip'
         if (info.id != 'astral_ascension_renewed' || info.name != remote.modName)
-            throw new GradleException('Update metadata must identify Astral Ascension Renewed')
+            throw new GradleException('Update metadata must identify Colonial Hypergrowth')
         if (info.updateCheckURL != masterUrl || remote.masterVersionFile != masterUrl)
             throw new GradleException('Both update URLs must point to the published astral_ascension_renewed.version file')
         if (remote.directDownloadURL != downloadUrl)
-            throw new GradleException('The update download must point to the AstralAscensionRenewed.zip release asset')
+            throw new GradleException('The update download must point to the ColonialHypergrowth.zip release asset')
         if (info.modThreadId?.toString() != remote.modThreadId?.toString())
             throw new GradleException('mod_info.json and the .version file must name the same forum topic')
         if (info.gameVersion != remote.starsectorVersion)
             throw new GradleException('The supported Starsector versions do not match')
         if (registrationFile.readLines('UTF-8').findAll { !it.trim().isEmpty() } != ['version file', 'astral_ascension_renewed.version'])
             throw new GradleException('Version Checker must register astral_ascension_renewed.version')
-        logger.lifecycle("Update metadata verified for Astral Ascension Renewed ${info.version}")
+        logger.lifecycle("Update metadata verified for Colonial Hypergrowth ${info.version}")
     }
 }
 
@@ -141,7 +141,7 @@ tasks.named('check') {
 def releaseFiles = copySpec {
     from(projectDir) {
         include 'mod_info.json', 'astral_ascension_renewed.version', 'icon.png'
-        include 'data/**', 'graphics/**', 'jars/AstralAscensionRenewed.jar'
+        include 'data/**', 'graphics/**', 'jars/ColonialHypergrowth.jar'
     }
 }
 
@@ -149,13 +149,13 @@ def releaseFiles = copySpec {
 tasks.register('stageRelease', Sync) {
     dependsOn tasks.named('jar')
     with releaseFiles
-    into layout.projectDirectory.dir('AstralAscensionRenewed')
+    into layout.projectDirectory.dir('ColonialHypergrowth')
 }
 
 // Package directly from the source files so stale staging contents cannot enter a release.
 tasks.register('releaseZip', Zip) {
     dependsOn tasks.named('stageRelease'), tasks.named('check')
     destinationDirectory = layout.projectDirectory
-    archiveFileName = 'AstralAscensionRenewed.zip'
-    into('AstralAscensionRenewed') { with releaseFiles }
+    archiveFileName = 'ColonialHypergrowth.zip'
+    into('ColonialHypergrowth') { with releaseFiles }
 }

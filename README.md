@@ -1,10 +1,10 @@
-# Astral Ascension Renewed
+# Colonial Hypergrowth
 
 [Forum topic](https://fractalsoftworks.com/forum/index.php?topic=36167.0)
 
 ![A size 15 Hyper-Ecumenopolis with its orbital ring](docs/screenshot-hyper-ecumenopolis.png)
 
-A continuation of Planetace's Astral Ascension, made with the original author's blessing. An Omega core can govern a
+Formerly **Astral Ascension Renewed**. A continuation of Planetace's Astral Ascension, made with the original author's blessing. An Omega core can govern a
 colony, and only an Omega core can take a colony past size 10.
 
 ## Omega core administrator
@@ -55,7 +55,7 @@ settings are used instead.
 
 ## Settings
 
-Open LunaLib's settings (`Shift+F2` in the campaign) and pick **Astral Ascension Renewed**: the size
+Open LunaLib's settings (`Shift+F2` in the campaign) and pick **Colonial Hypergrowth**: the size
 limit without an Omega core, how much slower growth past 10 is, the AoTD cap, and Omega core drops.
 
 ## Console commands
@@ -85,7 +85,7 @@ Leave out the colony name to use the colony you are docked at. Omega cores for t
 ## Building
 
 Set `starsectorPath` in `gradle.properties`, then run `gradlew releaseZip`. The build runs every
-check and writes `AstralAscensionRenewed.zip` next to this file, ready for a mod manager. Compiling
+check and writes `ColonialHypergrowth.zip` next to this file, ready for a mod manager. Compiling
 needs Console Commands installed in the game's `mods` folder; playing does not.
 
 `tools/make_textures.py` regenerates the planet textures, city lights and icons, and

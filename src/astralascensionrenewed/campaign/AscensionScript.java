@@ -49,7 +49,7 @@ public final class AscensionScript implements EveryFrameScript {
 
     private static final Logger log = Global.getLogger(AscensionScript.class);
 
-    private final Ledger ledger = new Ledger("Astral Ascension Renewed");
+    private final Ledger ledger = new Ledger("Colonial Hypergrowth");
     private final MarketImmigrationModifier strain = new GrowthStrain();
     private final boolean toolbox = Global.getSettings().getModManager().isModEnabled(TOOLBOX_ID);
     private boolean failed;
@@ -84,9 +84,9 @@ public final class AscensionScript implements EveryFrameScript {
             // One bad frame must not take the campaign down with it. Logged once, then this mod
             // stands still for the rest of the session.
             failed = true;
-            log.error("Astral Ascension Renewed stopped after an error", e);
+            log.error("Colonial Hypergrowth stopped after an error", e);
             Global.getSector().getCampaignUI().addMessage(
-                    "Astral Ascension Renewed hit an error and stopped until the game is loaded again. "
+                    "Colonial Hypergrowth hit an error and stopped until the game is loaded again. "
                             + "See starsector.log.", Misc.getNegativeHighlightColor());
         }
     }

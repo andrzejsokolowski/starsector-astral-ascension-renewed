@@ -18,7 +18,7 @@ public class AstralAscensionRenewedPlugin extends BaseModPlugin {
     public void onApplicationLoad() {
         OddiszCommonsVersion.require();
         if (Global.getSettings().getModManager().isModEnabled(ASTRAL_ASCENSION_ID)) {
-            throw new RuntimeException("Astral Ascension Renewed replaces Astral Ascension. "
+            throw new RuntimeException("Colonial Hypergrowth replaces Astral Ascension. "
                     + "Disable one of the two in the launcher.");
         }
         // LunaLib keeps its listeners for the whole session, so register once.

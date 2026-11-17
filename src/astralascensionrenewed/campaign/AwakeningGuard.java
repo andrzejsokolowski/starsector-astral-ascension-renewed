@@ -82,7 +82,7 @@ public final class AwakeningGuard implements EveryFrameScript {
         } catch (RuntimeException | LinkageError e) {
             // A Dreams of the Past update that changed these classes must not take the campaign down.
             failed = true;
-            log.error("Astral Ascension Renewed stopped its Dreams of the Past awakening check", e);
+            log.error("Colonial Hypergrowth stopped its Dreams of the Past awakening check", e);
         }
     }
 }

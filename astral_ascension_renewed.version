@@ -1,13 +1,13 @@
 {
-	"masterVersionFile":"https://raw.githubusercontent.com/andrzejsokolowski/starsector-astral-ascension-renewed/main/astral_ascension_renewed.version",
-	"changelogURL":"https://raw.githubusercontent.com/andrzejsokolowski/starsector-astral-ascension-renewed/main/changelog.txt",
-	"modName":"Astral Ascension Renewed",
+	"masterVersionFile":"https://raw.githubusercontent.com/andrzejsokolowski/starsector-colonial-hypergrowth/main/astral_ascension_renewed.version",
+	"changelogURL":"https://raw.githubusercontent.com/andrzejsokolowski/starsector-colonial-hypergrowth/main/changelog.txt",
+	"modName":"Colonial Hypergrowth",
 	"modThreadId":36167,
 	"modVersion": {
 		"major":1,
-		"minor":1,
+		"minor":2,
 		"patch":0
 	},
 	"starsectorVersion":"0.98.5a-RC4",
-	"directDownloadURL":"https://github.com/andrzejsokolowski/starsector-astral-ascension-renewed/releases/latest/download/AstralAscensionRenewed.zip"
+	"directDownloadURL":"https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/releases/latest/download/ColonialHypergrowth.zip"
 }
