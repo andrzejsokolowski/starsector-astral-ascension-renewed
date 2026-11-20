@@ -72,18 +72,18 @@ write("data/strings/descriptions.csv",
 SKILL_HEADER = ["id", "name", "order", "tier", "reqPoints", "reqPointsPerExtraSkill", "description", "author",
                 "combat officer", "admiral", "admin", "tags", "icon", ""]
 write("data/characters/skills/skill_data.csv", SKILL_HEADER, [
-    ["aar_ethereal_enlightenment", "Ethereal Enlightenment", "36000", "0", "", "",
+    ["aar_ethereal_enlightenment", "Zero Waste", "36000", "0", "", "",
      "It does not manage the colony. It simply sees no reason for anything to be wasted.",
      "Report to the Hegemony Directorate on AI-run worlds", "", "", "TRUE", "npc_only, ai_core_only",
-     "graphics/icons/skills/aar_ethereal_enlightenment.png", ""],
-    ["aar_acumenious_oracle", "Acumenious Oracle", "36001", "0", "", "",
+     "graphics/icons/skills/aar_zero_waste.png", ""],
+    ["aar_acumenious_oracle", "Total Vigilance", "36001", "0", "", "",
      "Our raiders were met at every landing site, by defenders who had arrived before we chose where to land.",
      "Debrief of a failed pirate raid", "", "", "TRUE", "npc_only, ai_core_only",
-     "graphics/icons/skills/aar_acumenious_oracle.png", ""],
-    ["aar_delphic_optimiser", "Delphic Optimiser", "36002", "0", "", "",
+     "graphics/icons/skills/aar_total_vigilance.png", ""],
+    ["aar_delphic_optimiser", "Frictionless Trade", "36002", "0", "", "",
      "Every freighter is loaded before it lands. Every contract is signed before it is offered.",
      "A trader on the docks of an Omega-run world", "", "", "TRUE", "npc_only, ai_core_only",
-     "graphics/icons/skills/aar_delphic_optimiser.png", ""],
+     "graphics/icons/skills/aar_frictionless_trade.png", ""],
 ])
 
 RULES_HEADER = ["id", "trigger", "conditions", "script", "text", "options", "notes"]
@@ -111,14 +111,14 @@ write("data/campaign/rules.csv", RULES_HEADER, [
 ])
 
 write("data/console/commands.csv", ["command", "class", "tags", "syntax", "help"], [
-    ["aar_size", PKG + ".console.AarSize", "astral,cheat,market", "aar_size <3-15> [colony name]",
+    ["aar_size", PKG + ".console.AarSize", "hypergrowth,cheat,market", "aar_size <3-15> [colony name]",
      "Sets a colony's size directly, up to 15 (Console Commands' own setmarketsize stops at 10). Updates the "
      "population condition, the Arcology World, Ecumenopolis or Hyper-Ecumenopolis stage and the planet's look. Past 10 the colony "
      "needs an Omega core administrator first. Uses the colony you are docked at if no name is given."],
-    ["aar_growth", PKG + ".console.AarGrowth", "astral,cheat,market", "aar_growth <0-100> [colony name]",
+    ["aar_growth", PKG + ".console.AarGrowth", "hypergrowth,cheat,market", "aar_growth <0-100> [colony name]",
      "Sets how far a colony has grown towards its next size, in percent. 99 makes it grow within days, "
      "if it is allowed to grow."],
-    ["aar_status", PKG + ".console.AarStatus", "astral,market", "aar_status [colony name]",
+    ["aar_status", PKG + ".console.AarStatus", "hypergrowth,market", "aar_status [colony name]",
      "Shows a colony's size, size limit, growth, administrator, stage and AoTD scaling."],
 ])
 print("data files written")

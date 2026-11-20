@@ -29,7 +29,7 @@ import astralascensionrenewed.Settings;
  * Runs every frame, also while paused, so a change made in the colony screen takes hold at once.
  *
  * For every colony governed by an Omega core it lifts the size limit to 15, doubles production and
- * halves demand (Ethereal Enlightenment), and slows growth past size 10. For every colony past size
+ * halves demand (Zero Waste), and slows growth past size 10. For every colony past size
  * 10 it keeps the stage and planet look in step with the size, caps AoTD's size doubling, and starts
  * the Great Civil War if the Omega core is gone.
  */
@@ -149,7 +149,7 @@ public final class AscensionScript implements EveryFrameScript {
     }
 
     /**
-     * Ethereal Enlightenment: every building makes twice as much and needs half as much, rounded
+     * Zero Waste: every building makes twice as much and needs half as much, rounded
      * down. Production is a plain multiplier. Demand is set with a flat amount, recomputed every
      * frame, so it can round down instead of to the nearest unit.
      */

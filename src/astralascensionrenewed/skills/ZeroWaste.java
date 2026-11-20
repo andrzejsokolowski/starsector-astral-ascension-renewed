@@ -5,10 +5,10 @@ import com.fs.starfarer.api.characters.MarketSkillEffect;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 
 /** Omega core administrator skill: hazard, ship quality, production and industry slots. */
-public class EtherealEnlightenment {
+public class ZeroWaste {
 
-    public static final String ID = "aar_ethereal_enlightenment";
-    public static final String NAME = "Ethereal Enlightenment";
+    public static final String ID = "aar_ethereal_enlightenment"; // saved in games, never change
+    public static final String NAME = "Zero Waste";
 
     public static class Level1 extends AdminEffect {
         public void apply(MarketAPI market, String id, float level) {

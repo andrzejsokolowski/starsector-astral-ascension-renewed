@@ -565,14 +565,14 @@ def main():
 
     skills = os.path.join(args.core, "graphics", "icons", "skills")
     tint_icon(os.path.join(skills, "industrial_planning.png"), (210, 150, 255)).save(
-        os.path.join(out_skills, "aar_ethereal_enlightenment.png"))
+        os.path.join(out_skills, "aar_zero_waste.png"))
     tint_icon(os.path.join(skills, "planetary_ops.png"), (255, 140, 210)).save(
-        os.path.join(out_skills, "aar_acumenious_oracle.png"))
+        os.path.join(out_skills, "aar_total_vigilance.png"))
     tint_icon(os.path.join(skills, "hypercognition.png"), (160, 170, 255)).save(
-        os.path.join(out_skills, "aar_delphic_optimiser.png"))
+        os.path.join(out_skills, "aar_frictionless_trade.png"))
 
     planet_icon(*made["aar_ecumenopolis"], 128).save(
-        os.path.join(ROOT, "graphics", "icons", "astral-ascension-renewed.png"))
+        os.path.join(ROOT, "graphics", "icons", "colonial-hypergrowth.png"))
 
     if args.preview:
         prev = os.path.join(ROOT, "build", "texture-preview")

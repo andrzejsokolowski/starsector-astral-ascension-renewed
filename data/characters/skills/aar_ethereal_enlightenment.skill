@@ -8,10 +8,10 @@
 			"requiredSkillLevel":1,
 			"effectBasedOnLevel":false,
 			"effects":[
-				{"type":"GOVERNED_OUTPOST", "script":"astralascensionrenewed.skills.EtherealEnlightenment$Level1"},
-				{"type":"GOVERNED_OUTPOST", "script":"astralascensionrenewed.skills.EtherealEnlightenment$Level2"},
-				{"type":"GOVERNED_OUTPOST", "script":"astralascensionrenewed.skills.EtherealEnlightenment$Level3"},
-				{"type":"GOVERNED_OUTPOST", "script":"astralascensionrenewed.skills.EtherealEnlightenment$Level4"},
+				{"type":"GOVERNED_OUTPOST", "script":"astralascensionrenewed.skills.ZeroWaste$Level1"},
+				{"type":"GOVERNED_OUTPOST", "script":"astralascensionrenewed.skills.ZeroWaste$Level2"},
+				{"type":"GOVERNED_OUTPOST", "script":"astralascensionrenewed.skills.ZeroWaste$Level3"},
+				{"type":"GOVERNED_OUTPOST", "script":"astralascensionrenewed.skills.ZeroWaste$Level4"},
 			]
 		},
 	],

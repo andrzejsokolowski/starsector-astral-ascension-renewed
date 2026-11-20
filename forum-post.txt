@@ -1,6 +1,5 @@
 [center][img width=128]https://raw.githubusercontent.com/andrzejsokolowski/starsector-colonial-hypergrowth/main/icon.png[/img]
 [size=28pt][url=https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/releases/latest][b]Colonial Hypergrowth[/b][/url][/size]
-[size=14pt][i]formerly Astral Ascension Renewed[/i][/size]
 [url=https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/releases/latest][img]https://img.shields.io/github/downloads/andrzejsokolowski/starsector-colonial-hypergrowth/total?style=for-the-badge&label=download[/img][/url]  [url=https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth][img]https://img.shields.io/github/v/release/andrzejsokolowski/starsector-colonial-hypergrowth?display_name=tag&sort=semver&style=for-the-badge&label=source[/img][/url]
 [/center]
 [center][b]
@@ -11,7 +10,6 @@ WHAT DOES THIS MOD DO?
 
 Colonies past size 10 become Arcology Worlds, then Ecumenopolises, then Hyper-Ecumenopolises: the planet turns into a city, lit day and night, with an orbital ring at size 15.
 Take the Omega core away from one and it falls into a Great Civil War.
-A continuation of Planetace's Astral Ascension, made with the original author's blessing.
 
 
 [color=red]Requires [b]LunaLib[/b] and [b][url=https://fractalsoftworks.com/forum/index.php?topic=36282]OddiszCommons[/url][/b].[/color]
@@ -20,16 +18,15 @@ A continuation of Planetace's Astral Ascension, made with the original author's 
 [center][img]https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/blob/main/screenshots/01-hyper-ecumenopolis-orbit.png?raw=true[/img]
 [img]https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/blob/main/screenshots/02-arcology-world.png?raw=true[/img]
 [img]https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/blob/main/screenshots/03-ecumenopolis.png?raw=true[/img]
-[img]https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/blob/main/screenshots/04-hyper-ecumenopolis.png?raw=true[/img]
-[img]https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/blob/main/screenshots/05-omega-admin-acumenious-oracle.webp?raw=true[/img][/center]
+[img]https://github.com/andrzejsokolowski/starsector-colonial-hypergrowth/blob/main/screenshots/04-hyper-ecumenopolis.png?raw=true[/img][/center]
 [/spoiler]
 [center]
 [hr][center][size=12pt][b]The Omega Core Administrator[/b][/size][/center][hr]
 [list]
 [li]Assign an Omega core as administrator the same way as an Alpha core.[/li]
-[li][b]Ethereal Enlightenment:[/b] hazard rating -25%, ship quality +25%, every building's production x2 and demand halved, +1 maximum industries.[/li]
-[li][b]Acumenious Oracle:[/b] stability +3, ground defenses x3, fleet size x2.[/li]
-[li][b]Delphic Optimiser:[/b] colony income x1.25, colony upkeep x0.75, accessibility +50%.[/li]
+[li][b]Zero Waste:[/b] hazard rating -25%, ship quality +25%, every building's production x2 and demand halved, +1 maximum industries.[/li]
+[li][b]Total Vigilance:[/b] stability +3, ground defenses x3, fleet size x2.[/li]
+[li][b]Frictionless Trade:[/b] colony income x1.25, colony upkeep x0.75, accessibility +50%.[/li]
 [/list]
 [hr][center][size=12pt][b]Colonies Past Size 10[/b][/size][/center][hr]
 [list]
@@ -68,23 +65,16 @@ With Console Commands installed. Leave out the colony name to use the colony you
 [b]aar_status [colony][/b] - size, size limit, growth, administrator, stage and AoTD scaling.
 [/spoiler]
 [spoiler=FAQ]
-[b]I have Astral Ascension Renewed. Is this the same mod?[/b]
-Yes, under a new name. Install Colonial Hypergrowth and delete the old AstralAscensionRenewed folder from your mods folder. Saves and settings carry over.
 [b]Where do I get Omega cores?[/b]
 Destroyed Omega ships can drop the core that commanded them: 33% for a frigate, 66% for a destroyer, 99% for a cruiser, always for a capital. If Omega Core Everywhere is installed, its drop settings are used instead.
-[b]Can I run it with the original Astral Ascension?[/b]
-No. This mod replaces it, and the game will not start with both enabled.
-[b]Can I continue a save from the original Astral Ascension?[/b]
-No. Start a new game, or use a save that never had the original.
+[b]Does it work with other mods that make Omega cores administrators?[/b]
+No. Enable only one of them.
 [b]Can I add it to an existing save?[/b]
 Yes.
 [b]Can I remove it from a save?[/b]
 Not once a colony has an Omega core administrator or has grown past size 10.
 [b]What about big worlds from other mods?[/b]
 They are left alone, unless you give one an Omega core administrator.
-[/spoiler]
-[spoiler=Credits]
-[b]Astral Ascension[/b] by [b]Planetace[/b]: the idea of the Omega core administrator and its three skills, colonies past size 10, and ecumenopolis worlds. This mod is written from scratch with their permission and uses none of the original's code or art.
 [/spoiler]
 [spoiler=AI use disclaimer]Some or all assets and code in this mod were created using AI tools:
 [list]
@@ -98,7 +88,8 @@ This mod is under the CC0 (Creative Commons Zero) License, allowing you to do wh
 [/spoiler]
 
 [spoiler=Version log]
-1.2.0 - renamed from Astral Ascension Renewed to Colonial Hypergrowth. Saves and settings carry over.
+1.2.1 - new names for the Omega core administrator skills: Zero Waste, Total Vigilance and Frictionless Trade. Their effects did not change.
+1.2.0 - renamed to Colonial Hypergrowth. Saves and settings carry over.
 1.1.0 - updated for Starsector 0.98.5a.
 1.0.4 - new gold icon in mod managers (TriOS) and in LunaLib's settings.
 1.0.3 - works with any OddiszCommons from 0.2.0 on: the game no longer turns this mod off as incompatible when a newer OddiszCommons is installed.

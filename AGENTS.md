@@ -30,22 +30,25 @@ every requested change.
 
 ## Name
 
-Called Astral Ascension Renewed until 1.1.0; renamed to Colonial Hypergrowth in 1.2.0 (2026-11-17).
-Only the names players see changed. The mod id `astral_ascension_renewed`, the `aar_` ids, the
-`astralascensionrenewed` Java packages and `astral_ascension_renewed.version` stay: saves store
+Colonial Hypergrowth since 1.2.0 (2026-11-17). The mod id `astral_ascension_renewed`, the `aar_`
+ids (skill ids included), the `astralascensionrenewed` Java packages and
+`astral_ascension_renewed.version` are left from the first name and stay: saves store skill ids,
 condition ids and class names, and LunaLib keys settings by mod id. Do not rename them.
 The install folder, ZIP and JAR are `ColonialHypergrowth`.
 
-## Origin
+## Own work
 
-A continuation of Astral Ascension (`Planetace_AstralAscension`) by Planetace, who gave Andrzej their
-OK to continue it. No code or art from the original is used; names of the three Omega skills are
-kept. The mod refuses to start next to the original.
+This mod is its own work, not a successor of any other mod. Never present it as a continuation,
+remake or successor of another mod, never credit or name another mod as its origin, and never
+bring back a name it used before. This covers in-game text, mod description, README, forum post,
+hub post, release notes, changelog, Discord, screenshots and code, including mod ids in
+compatibility checks (AAR-16, 2026-11-21). The three Omega administrator skills are Zero Waste,
+Total Vigilance and Frictionless Trade.
 
 ## Layout
 
-- `src/astralascensionrenewed/AstralAscensionRenewedPlugin` - mod plugin; refuses to run next to the
-  original, sets `Misc.MAX_COLONY_SIZE` from LunaLib, installs the campaign script.
+- `src/astralascensionrenewed/ColonialHypergrowthPlugin` - mod plugin; checks the OddiszCommons
+  version, sets `Misc.MAX_COLONY_SIZE` from LunaLib, installs the campaign script.
 - `src/astralascensionrenewed/OmegaDrops` - Omega core drops; stands down when Omega Core
   Everywhere (`omega_core_everywhere`) is enabled.
 - `campaign/AarCampaignPlugin` + `OmegaAdminPlugin` - make the Omega core an administrator.

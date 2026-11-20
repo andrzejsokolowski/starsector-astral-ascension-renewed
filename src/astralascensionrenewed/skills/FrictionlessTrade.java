@@ -2,13 +2,13 @@ package astralascensionrenewed.skills;
 
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 
-import astralascensionrenewed.skills.EtherealEnlightenment.AdminEffect;
+import astralascensionrenewed.skills.ZeroWaste.AdminEffect;
 
 /** Omega core administrator skill: income, upkeep and accessibility. */
-public class DelphicOptimiser {
+public class FrictionlessTrade {
 
-    public static final String ID = "aar_delphic_optimiser";
-    public static final String NAME = "Delphic Optimiser";
+    public static final String ID = "aar_delphic_optimiser"; // saved in games, never change
+    public static final String NAME = "Frictionless Trade";
 
     public static class Level1 extends AdminEffect {
         public void apply(MarketAPI market, String id, float level) {

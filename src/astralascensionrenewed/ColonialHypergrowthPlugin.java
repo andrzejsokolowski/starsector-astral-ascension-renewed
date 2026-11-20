@@ -9,18 +9,11 @@ import astralascensionrenewed.campaign.AwakeningGuard;
 import lunalib.lunaSettings.LunaSettings;
 import lunalib.lunaSettings.LunaSettingsListener;
 
-public class AstralAscensionRenewedPlugin extends BaseModPlugin {
-
-    /** The original. Both mods set the colony size limit and claim the Omega core administrator. */
-    static final String ASTRAL_ASCENSION_ID = "Planetace_AstralAscension";
+public class ColonialHypergrowthPlugin extends BaseModPlugin {
 
     @Override
     public void onApplicationLoad() {
         OddiszCommonsVersion.require();
-        if (Global.getSettings().getModManager().isModEnabled(ASTRAL_ASCENSION_ID)) {
-            throw new RuntimeException("Colonial Hypergrowth replaces Astral Ascension. "
-                    + "Disable one of the two in the launcher.");
-        }
         // LunaLib keeps its listeners for the whole session, so register once.
         if (!LunaSettings.hasSettingsListenerOfClass(SettingsListener.class)) {
             LunaSettings.addSettingsListener(new SettingsListener());

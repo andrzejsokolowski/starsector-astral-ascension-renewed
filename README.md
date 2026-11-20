@@ -4,18 +4,17 @@
 
 ![A size 15 Hyper-Ecumenopolis with its orbital ring](docs/screenshot-hyper-ecumenopolis.png)
 
-Formerly **Astral Ascension Renewed**. A continuation of Planetace's Astral Ascension, made with the original author's blessing. An Omega core can govern a
-colony, and only an Omega core can take a colony past size 10.
+An Omega core can govern a colony, and only an Omega core can take a colony past size 10.
 
 ## Omega core administrator
 
 Assign an Omega core as a colony's administrator the same way as an Alpha core: it shows up in the
 administrator list when you have one in your cargo or the colony's storage. It brings three skills:
 
-- **Ethereal Enlightenment:** hazard rating -25%, ship quality +25%, every building's production x2
+- **Zero Waste:** hazard rating -25%, ship quality +25%, every building's production x2
   and demand halved (rounded down), +1 maximum industries.
-- **Acumenious Oracle:** stability +3, ground defenses x3, fleet size x2.
-- **Delphic Optimiser:** colony income x1.25, colony upkeep x0.75, accessibility +50%.
+- **Total Vigilance:** stability +3, ground defenses x3, fleet size x2.
+- **Frictionless Trade:** colony income x1.25, colony upkeep x0.75, accessibility +50%.
 
 ## Colonies past size 10
 
@@ -72,8 +71,7 @@ Leave out the colony name to use the colony you are docked at. Omega cores for t
 
 ## Compatibility
 
-- Replaces Astral Ascension. Do not run both; the game refuses to start if you try.
-- Saves made with the original Astral Ascension do not load with this mod.
+- Do not run it together with other mods that make Omega cores colony administrators.
 - Cannot be removed from a save once a colony has an Omega administrator or has grown past size 10.
 - Big worlds placed by other mods are left alone unless you give them an Omega core administrator.
 

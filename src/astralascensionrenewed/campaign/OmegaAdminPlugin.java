@@ -7,9 +7,9 @@ import com.fs.starfarer.api.characters.FullName.Gender;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 
-import astralascensionrenewed.skills.AcumeniousOracle;
-import astralascensionrenewed.skills.DelphicOptimiser;
-import astralascensionrenewed.skills.EtherealEnlightenment;
+import astralascensionrenewed.skills.FrictionlessTrade;
+import astralascensionrenewed.skills.TotalVigilance;
+import astralascensionrenewed.skills.ZeroWaste;
 
 /**
  * Makes the Omega core a colony administrator. The game's administrator picker lists every AI core
@@ -26,9 +26,9 @@ public class OmegaAdminPlugin implements AICoreAdminPlugin {
         person.setPortraitSprite("graphics/portraits/characters/omega.png");
         person.setRankId(null);
         person.setPostId(Ranks.POST_ADMINISTRATOR);
-        person.getStats().setSkillLevel(EtherealEnlightenment.ID, 1f);
-        person.getStats().setSkillLevel(AcumeniousOracle.ID, 1f);
-        person.getStats().setSkillLevel(DelphicOptimiser.ID, 1f);
+        person.getStats().setSkillLevel(ZeroWaste.ID, 1f);
+        person.getStats().setSkillLevel(TotalVigilance.ID, 1f);
+        person.getStats().setSkillLevel(FrictionlessTrade.ID, 1f);
         return person;
     }
 }
