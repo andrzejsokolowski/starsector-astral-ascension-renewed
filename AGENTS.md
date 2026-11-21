@@ -107,8 +107,8 @@ Do not stop after pushing a tag. A tag is not a release download.
 ## Update metadata
 
 Keep mod_info.json, astral_ascension_renewed.version, and data/config/version/version_files.csv consistent.
-Forum topic: https://fractalsoftworks.com/forum/index.php?topic=36167.0 (modThreadId "36167" in
-mod_info.json, 36167 in the .version file).
+Forum topic: https://fractalsoftworks.com/forum/index.php?topic=36497.0 (modThreadId "36497" in
+mod_info.json, 36497 in the .version file).
 Update URL (updateCheckURL and masterVersionFile):
 
 https://raw.githubusercontent.com/andrzejsokolowski/starsector-colonial-hypergrowth/main/astral_ascension_renewed.version

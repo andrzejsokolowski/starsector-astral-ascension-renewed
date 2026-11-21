@@ -1,6 +1,6 @@
 # Colonial Hypergrowth
 
-[Forum topic](https://fractalsoftworks.com/forum/index.php?topic=36167.0)
+[Forum topic](https://fractalsoftworks.com/forum/index.php?topic=36497.0)
 
 ![A size 15 Hyper-Ecumenopolis with its orbital ring](docs/screenshot-hyper-ecumenopolis.png)
 

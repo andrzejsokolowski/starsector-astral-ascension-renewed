@@ -5,7 +5,7 @@
   "utility": "false",
   "version": "1.2.1",
   "description": "An Omega core can govern a colony, with three administrator skills of its own, and only an Omega core can take a colony past size 10, up to 15. Colonies past size 10 become Arcology Worlds, Ecumenopolises and finally Hyper-Ecumenopolises with an orbital ring, each with new looks and bonuses. Removing the Omega core from such a colony starts a Great Civil War. Compatible with AoTD's economy.",
-  "modThreadId": "36167",
+  "modThreadId": "36497",
   "gameVersion": "0.98.5a-RC4",
   "jars": ["jars/ColonialHypergrowth.jar"],
   "modPlugin": "astralascensionrenewed.ColonialHypergrowthPlugin",
